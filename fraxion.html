@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Fraxion | Smart GR Tech</title>
+    <meta name="description" content="Página comercial do Smart Fraxion: plataforma híbrida de Laser CO2 fracionado e não fracionado com microcoring." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --white: #ffffff;
+        --off: #f5f8fb;
+        --ink: #07111f;
+        --text: #314057;
+        --muted: #718198;
+        --line: #dce7f1;
+        --blue: #00b8ef;
+        --blue-2: #0077ff;
+        --blue-dark: #003f88;
+        --navy: #1c2b44;
+        --soft-blue: #eaf6ff;
+        --warm: #b97945;
+        --pink: #b35a86;
+        --shadow-soft: 0 16px 38px rgba(8, 23, 42, .08);
+        --shadow-card: 0 22px 58px rgba(8, 23, 42, .10);
+        --max: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--off);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      /* NAV SMART GR TECH */
+
+      .nav-bar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255,255,255,.94);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(220,231,241,.85);
+      }
+
+      .nav-inner {
+        min-height: 74px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 26px;
+      }
+
+      .brand-logo {
+        width: 210px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+      }
+
+      .brand-logo img {
+        width: 100%;
+        max-height: 46px;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .menu a {
+        color: #5f6f85;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: .04em;
+        transition: color .2s ease;
+      }
+
+      .menu a:hover {
+        color: var(--blue-2);
+      }
+
+      .nav-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn {
+        min-height: 44px;
+        padding: 0 19px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: .2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-outline {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        color: var(--ink);
+        box-shadow: 0 8px 24px rgba(8,23,42,.05);
+      }
+
+      .btn-primary {
+        background: var(--navy);
+        color: #ffffff;
+      }
+
+      .mobile-menu {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: #ffffff;
+        color: var(--ink);
+        font-weight: 900;
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      .mobile-nav {
+        display: none;
+      }
+
+      /* GLOBAL PRODUCT */
+
+      .product-hero {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background: #eef4fa;
+        line-height: 0;
+      }
+
+      .product-hero-link {
+        display: block;
+        width: 100%;
+        position: relative;
+      }
+
+      .product-hero-img {
+        width: 100%;
+        height: clamp(260px, 30vw, 430px);
+        object-fit: cover;
+        object-position: center;
+        background: linear-gradient(135deg, #ffffff 0%, #f5f8fb 48%, #e8f4ff 100%);
+      }
+
+      .hero-placeholder {
+        width: 100%;
+        height: clamp(260px, 30vw, 430px);
+        display: none;
+        position: relative;
+        border-bottom: 1px solid var(--line);
+        background: radial-gradient(circle at 76% 28%, rgba(0,119,255,.12), transparent 30%), linear-gradient(135deg, #ffffff 0%, #f5f8fb 48%, #e8f4ff 100%);
+      }
+
+      .image-slot {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #ffffff 0%, #f5f8fb 48%, #e8f4ff 100%);
+      }
+
+      .slot-label {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        text-align: center;
+        color: rgba(28,43,68,.55);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        z-index: 2;
+        line-height: 1.35;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .section.white {
+        background: #ffffff;
+      }
+
+      .section.off {
+        background: var(--off);
+      }
+
+      .section-head {
+        max-width: 850px;
+        margin: 0 auto 34px;
+        text-align: center;
+      }
+
+      .kicker {
+        display: block;
+        margin-bottom: 12px;
+        color: #383d43;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #181818;
+        letter-spacing: -.055em;
+      }
+
+      .section-head h1,
+      .section-head h2 {
+        font-size: clamp(32px, 5vw, 58px);
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .section-head p {
+        max-width: 740px;
+        margin: 0 auto;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .hero-summary {
+        padding: 56px 0 42px;
+        background: #ffffff;
+      }
+
+      .hero-summary-grid {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .summary-card {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow-soft);
+        padding: clamp(28px, 4vw, 44px);
+      }
+
+      .summary-main {
+        position: relative;
+        overflow: hidden;
+        background: var(--navy);
+        color: #ffffff;
+      }
+
+      .summary-main::after {
+        content: "";
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        right: -130px;
+        bottom: -160px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0,184,239,.24), transparent 68%);
+      }
+
+      .summary-main .kicker,
+      .summary-main h1 {
+        color: #ffffff;
+        position: relative;
+        z-index: 1;
+      }
+
+      .summary-main h1 {
+        font-size: clamp(36px, 5vw, 62px);
+        line-height: .98;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .summary-main p {
+        color: rgba(255,255,255,.78);
+        font-size: 16px;
+        line-height: 1.72;
+        position: relative;
+        z-index: 1;
+      }
+
+      .summary-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .summary-tag {
+        min-height: 34px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.10);
+        border: 1px solid rgba(255,255,255,.22);
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .summary-side {
+        display: grid;
+        gap: 14px;
+      }
+
+      .quick-stat {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 24px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .quick-stat strong {
+        display: block;
+        color: var(--navy);
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1;
+        letter-spacing: -.06em;
+        margin-bottom: 8px;
+      }
+
+      .quick-stat span {
+        color: #5f6f85;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .split-card,
+      .info-card,
+      .mode-card,
+      .indication-card,
+      .applicator-card,
+      .step-card {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .split-card {
+        border-radius: 28px;
+        overflow: hidden;
+        min-height: 330px;
+      }
+
+      .split-copy {
+        padding: clamp(28px, 4vw, 44px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .split-copy h2 {
+        font-size: clamp(30px, 4vw, 50px);
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .split-copy p {
+        color: #5f6f85;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .split-media {
+        min-height: 360px;
+        background: #e8f4ff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .split-image-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 360px;
+        border: 0;
+      }
+
+      .split-image-link img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .split-image-link img + .slot-label {
+        display: none;
+      }
+
+      .feature-list {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .feature-list li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        color: var(--text);
+        font-size: 15px;
+        line-height: 1.48;
+        font-weight: 500;
+      }
+
+      .feature-list li::before {
+        content: "✓";
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: #eef7ff;
+        color: var(--blue-dark);
+        border: 1px solid #cfe4f5;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .info-card {
+        border-radius: 26px;
+        padding: 26px 22px;
+        transition: .22s ease;
+      }
+
+      .info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-card);
+        border-color: rgba(0,119,255,.25);
+      }
+
+      .info-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+        background: var(--navy);
+        color: #ffffff;
+        display: grid;
+        place-items: center;
+        margin-bottom: 18px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .info-icon.blue {
+        background: var(--blue-dark);
+      }
+
+      .info-icon.warm {
+        background: var(--warm);
+      }
+
+      .info-card h3,
+      .mode-card h3,
+      .step-card h3,
+      .applicator-copy h3 {
+        font-size: 21px;
+        line-height: 1.12;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .info-card p,
+      .mode-card p,
+      .step-card p,
+      .applicator-copy p {
+        color: #5f6f85;
+        font-size: 14px;
+        line-height: 1.58;
+      }
+
+      .mode-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .mode-card {
+        border-radius: 26px;
+        padding: 26px 22px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mode-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        height: 7px;
+        background: linear-gradient(90deg, var(--blue-dark), var(--blue));
+      }
+
+      .mode-label,
+      .type-tag {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: .1em;
+      }
+
+      .mode-label {
+        min-height: 30px;
+        background: #f3f8fd;
+        border: 1px solid var(--line);
+        color: var(--blue-dark);
+        padding: 0 12px;
+        font-size: 11px;
+        margin-bottom: 18px;
+      }
+
+      .indication-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .indication-card {
+        border-radius: 22px;
+        padding: 18px;
+        min-height: 116px;
+      }
+
+      .type-tag {
+        min-height: 28px;
+        padding: 0 11px;
+        font-size: 11px;
+        margin-bottom: 12px;
+        border: 1px solid var(--line);
+        background: #eef7ff;
+        color: var(--blue-dark);
+      }
+
+      .type-tag.integrado {
+        color: #4d7a45;
+        background: #f1faef;
+        border-color: #d5edcf;
+      }
+
+      .type-tag.ablativo {
+        color: #8c5523;
+        background: #fff4e7;
+        border-color: #efd2af;
+      }
+
+      .type-tag.gineco {
+        color: #884d73;
+        background: #fff1f8;
+        border-color: #edd0e3;
+      }
+
+      .indication-card strong {
+        display: block;
+        color: #181818;
+        font-size: 15px;
+        line-height: 1.22;
+        font-weight: 700;
+      }
+
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .step-card {
+        border-radius: 24px;
+        padding: 20px;
+      }
+
+      .step-number {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 16px;
+        background: var(--navy);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .visual-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        margin-top: 28px;
+      }
+
+      .visual-card {
+        min-height: 330px;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #e8f4ff;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .visual-card .split-image-link {
+        min-height: 330px;
+      }
+
+      .applicators-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .applicator-card {
+        border-radius: 26px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        align-items: stretch;
+        min-height: 260px;
+      }
+
+      .applicator-image {
+        display: block;
+        min-height: 260px;
+        background: #f4f8fc;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .applicator-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        padding: 0;
+      }
+
+      .applicator-image img + .slot-label {
+        display: none;
+      }
+
+      .applicator-copy {
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .mini-list {
+        list-style: none;
+        display: grid;
+        gap: 9px;
+        margin-top: 16px;
+      }
+
+      .mini-list li {
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        gap: 8px;
+        color: var(--text);
+        font-size: 13px;
+        line-height: 1.42;
+      }
+
+      .mini-list li::before {
+        content: "✓";
+        width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: #eef7ff;
+        color: var(--blue-dark);
+        border: 1px solid #cfe4f5;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .cta-section {
+        padding: 20px 0 70px;
+        background: var(--off);
+      }
+
+      .cta-box {
+        background: var(--navy);
+        border-radius: 28px;
+        padding: clamp(30px, 5vw, 52px);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 28px;
+        box-shadow: 0 18px 44px rgba(28,43,68,.16);
+        color: #ffffff;
+      }
+
+      .cta-box span {
+        display: block;
+        margin-bottom: 10px;
+        color: #9ec7ff;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+
+      .cta-box h2 {
+        color: #ffffff;
+        font-size: clamp(28px, 4vw, 48px);
+        line-height: 1.02;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .cta-box p {
+        max-width: 680px;
+        color: rgba(255,255,255,.76);
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .cta-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .cta-actions a {
+        min-height: 52px;
+        padding: 0 28px;
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--navy);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 800;
+        white-space: nowrap;
+        transition: .2s ease;
+      }
+
+      .cta-actions a.secondary {
+        background: rgba(255,255,255,.12);
+        color: #ffffff;
+        border: 1px solid rgba(255,255,255,.28);
+      }
+
+      .cta-actions a:hover {
+        transform: translateY(-1px);
+      }
+
+      /* FOOTER SMART GR TECH */
+
+      .site-footer {
+        background: #ffffff;
+        color: var(--text);
+      }
+
+      .footer-newsletter {
+        background: #ffffff;
+        padding: 24px 0;
+        color: #ffffff;
+      }
+
+      .footer-newsletter-inner {
+        background: var(--navy);
+        border-radius: 28px;
+        padding: 38px 40px;
+        display: grid;
+        grid-template-columns: minmax(260px,.85fr) minmax(420px,1.15fr);
+        align-items: center;
+        gap: 38px;
+      }
+
+      .footer-newsletter span {
+        display: block;
+        margin-bottom: 10px;
+        color: #9ec7ff;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+
+      .footer-newsletter h2 {
+        max-width: 100%;
+        color: #ffffff;
+        font-size: clamp(26px, 2.4vw, 34px);
+        line-height: 1.04;
+        font-weight: 700;
+        letter-spacing: -.055em;
+        margin-bottom: 8px;
+      }
+
+      .footer-newsletter p {
+        color: rgba(255,255,255,.72);
+        font-size: 15px;
+        line-height: 1.45;
+      }
+
+      .footer-form {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) auto;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .footer-form input {
+        width: 100%;
+        min-height: 52px;
+        border: 1px solid rgba(255,255,255,.34);
+        outline: 0;
+        padding: 0 18px;
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--navy);
+        font-family: inherit;
+        font-size: 14px;
+      }
+
+      .footer-form button {
+        min-width: 180px;
+        min-height: 52px;
+        padding: 0 28px;
+        border: 0;
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--navy);
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .footer-main {
+        padding: 58px 0 46px;
+        background: #ffffff;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.45fr .75fr .85fr 1fr;
+        gap: 42px;
+      }
+
+      .footer-brand {
+        max-width: 390px;
+      }
+
+      .footer-logo {
+        width: 210px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        width: 100%;
+        max-height: 46px;
+        object-fit: contain;
+        object-position: left center;
+      }
+
+      .footer-brand p {
+        color: #5f6f85;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .footer-socials a {
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        background: #f3f8fd;
+        border: 1px solid var(--line);
+        color: var(--navy);
+      }
+
+      .footer-socials svg {
+        width: 19px;
+        height: 19px;
+        fill: currentColor;
+      }
+
+      .footer-col h3 {
+        color: #181818;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 18px;
+        letter-spacing: -.02em;
+      }
+
+      .footer-col a {
+        width: fit-content;
+        display: block;
+        color: #5f6f85;
+        font-size: 14px;
+        line-height: 1.35;
+        margin-bottom: 12px;
+      }
+
+      .footer-contact p {
+        color: #718198;
+        font-size: 13px;
+        line-height: 1.55;
+        margin: 4px 0 18px;
+      }
+
+      .footer-contact-btn {
+        width: fit-content !important;
+        min-height: 44px;
+        padding: 0 20px;
+        border-radius: 999px;
+        background: var(--navy);
+        color: #ffffff !important;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px !important;
+        font-weight: 800;
+        margin-top: 4px;
+      }
+
+      .footer-bottom {
+        background: #f5f8fb;
+        border-top: 1px solid var(--line);
+        padding: 18px 0;
+      }
+
+      .footer-bottom-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .footer-bottom p {
+        color: #718198;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 1040px) {
+        .nav-inner {
+          grid-template-columns: auto auto;
+        }
+
+        .menu,
+        .nav-actions .btn {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: inline-grid;
+          place-items: center;
+          margin-left: auto;
+        }
+
+        .brand-logo {
+          width: 190px;
+        }
+
+        .mobile-nav {
+          position: fixed;
+          top: 74px;
+          left: 0;
+          right: 0;
+          z-index: 49;
+          display: flex;
+          flex-direction: column;
+          background: #ffffff;
+          border-bottom: 1px solid var(--line);
+          box-shadow: 0 18px 38px rgba(8, 23, 42, .10);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-12px);
+          transition: .24s ease;
+        }
+
+        .mobile-nav.active {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+
+        .mobile-nav a {
+          padding: 18px 24px;
+          color: #5f6f85;
+          font-size: 15px;
+          font-weight: 600;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .mobile-nav-btn {
+          margin: 18px 24px 24px;
+          min-height: 48px;
+          border-radius: 999px;
+          background: var(--navy);
+          color: #ffffff !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: none !important;
+        }
+
+        .mobile-menu.active {
+          background: var(--navy);
+          color: #ffffff;
+        }
+
+        body.menu-open {
+          overflow: hidden;
+        }
+
+        .hero-summary-grid,
+        .split,
+        .visual-grid,
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+
+        .mode-grid,
+        .cards-grid,
+        .indication-grid,
+        .applicators-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .steps-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta-actions {
+          justify-content: flex-start;
+        }
+
+        .footer-newsletter-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1.2fr 1fr 1fr;
+        }
+
+        .footer-brand {
+          grid-column: 1 / -1;
+          max-width: 620px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          width: min(100% - 28px, var(--max));
+        }
+
+        .nav-inner {
+          min-height: 68px;
+        }
+
+        .brand-logo {
+          width: 160px;
+          height: 40px;
+        }
+
+        .brand-logo img {
+          max-height: 40px;
+        }
+
+        .mobile-nav {
+          top: 68px;
+        }
+
+        .product-hero-img,
+        .hero-placeholder {
+          height: 440px;
+          object-position: center bottom;
+        }
+
+        .hero-summary {
+          padding: 42px 0 32px;
+        }
+
+        .section {
+          padding: 44px 0;
+        }
+
+        .section-head {
+          margin-bottom: 26px;
+        }
+
+        .section-head h1,
+        .section-head h2,
+        .summary-main h1 {
+          font-size: clamp(30px, 9vw, 40px);
+          line-height: 1.03;
+        }
+
+        .summary-card,
+        .split-card,
+        .mode-card,
+        .visual-card,
+        .cta-box {
+          border-radius: 24px;
+        }
+
+        .summary-card,
+        .split-copy,
+        .cta-box {
+          padding: 28px 22px;
+        }
+
+        .mode-grid,
+        .cards-grid,
+        .indication-grid,
+        .steps-grid,
+        .applicators-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .split-media,
+        .split-image-link,
+        .visual-card,
+        .visual-card .split-image-link {
+          min-height: 260px;
+        }
+
+        .applicator-card {
+          grid-template-columns: 1fr;
+        }
+
+        .applicator-image {
+          min-height: 230px;
+        }
+
+        .applicator-image img {
+          padding: 0;
+        }
+
+        .cta-actions a {
+          width: 100%;
+        }
+
+        .footer-newsletter {
+          padding: 16px 0 24px;
+        }
+
+        .footer-newsletter-inner {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          padding: 26px 16px 22px;
+          border-radius: 8px;
+          text-align: center;
+        }
+
+        .footer-newsletter span {
+          display: none;
+        }
+
+        .footer-newsletter h2 {
+          font-size: 20px;
+          line-height: 1.12;
+        }
+
+        .footer-newsletter p {
+          font-size: 14px;
+        }
+
+        .footer-form {
+          grid-template-columns: minmax(0,1fr) auto;
+          gap: 8px;
+        }
+
+        .footer-form input {
+          min-height: 40px;
+          padding: 0 12px;
+          font-size: 12px;
+        }
+
+        .footer-form button {
+          min-width: 112px;
+          min-height: 40px;
+          padding: 0 16px;
+          font-size: 12px;
+        }
+
+        .footer-main {
+          padding: 44px 0 34px;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .footer-brand,
+        .footer-col {
+          text-align: center;
+        }
+
+        .footer-logo {
+          margin: 0 auto 18px;
+          width: 190px;
+        }
+
+        .footer-socials {
+          justify-content: center;
+        }
+
+        .footer-col a,
+        .footer-contact-btn {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .footer-bottom-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 6px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="nav-bar">
+      <div class="container nav-inner">
+        <a class="brand-logo" href="HOME PAGE - LP TECH.html" aria-label="Smart GR Tech">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech" />
+        </a>
+
+        <nav class="menu" aria-label="Navegação principal">
+          <a href="HOME PAGE - LP TECH.html#top">Home</a>
+          <a href="HOME PAGE - LP TECH.html#equipamentos">Produtos</a>
+          <a href="HOME PAGE - LP TECH.html#suporte">Suporte</a>
+          <a href="HOME PAGE - LP TECH.html#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-outline" href="index.html#area-exclusiva">Área exclusiva</a>
+          <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20sobre%20o%20Smart%20Fraxion" target="_blank" rel="noopener">Falar com especialista</a>
+          <button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+      <a href="HOME PAGE - LP TECH.html#top">Home</a>
+      <a href="HOME PAGE - LP TECH.html#equipamentos">Produtos</a>
+      <a href="HOME PAGE - LP TECH.html#suporte">Suporte</a>
+      <a href="HOME PAGE - LP TECH.html#faq">FAQ</a>
+      <a class="mobile-nav-btn" href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20sobre%20o%20Smart%20Fraxion" target="_blank" rel="noopener">Falar com especialista</a>
+    </nav>
+
+    <main id="top">
+      <section class="product-hero" aria-label="Banner Smart Fraxion">
+        <a class="product-hero-link" href="#resumo" aria-label="Conhecer Smart Fraxion">
+          <picture>
+            <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/Banner+PDP+-+Fraxion+Mobile.png" />
+            <img class="product-hero-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/Banner+PDP+-+Fraxion+Desk.png" alt="Smart Fraxion" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block';" />
+          </picture>
+          <div class="hero-placeholder">
+            <span class="slot-label">Espaço para banner Smart Fraxion</span>
+          </div>
+        </a>
+      </section>
+
+      <section class="hero-summary" id="resumo">
+        <div class="container hero-summary-grid">
+          <article class="summary-card summary-main">
+            <span class="kicker">Smart Fraxion</span>
+            <h1>Plataforma híbrida de CO2 para resurfacing de precisão.</h1>
+            <p>
+              Tecnologia integrada de energia fracionada e não fracionada com microcoring, desenvolvida para protocolos dermatológicos, ginecológicos e cirúrgicos com alto controle dos parâmetros.
+            </p>
+
+            <div class="summary-tags">
+              <span class="summary-tag">Laser CO2</span>
+              <span class="summary-tag">Fracionado e não fracionado</span>
+              <span class="summary-tag">Micro Coring</span>
+              <span class="summary-tag">Modo LowPain</span>
+              <span class="summary-tag">Thermal Control</span>
+            </div>
+          </article>
+
+          <div class="summary-side">
+            <article class="quick-stat">
+              <strong>10.600 nm</strong>
+              <span>Comprimento de onda com alta afinidade pela água presente na pele.</span>
+            </article>
+
+            <article class="quick-stat">
+              <strong>5 protocolos</strong>
+              <span>Possibilidade de salvar protocolos personalizados para cada modo de uso.</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section off" id="tecnologia">
+        <div class="container split">
+          <article class="split-card">
+            <div class="split-copy">
+              <span class="kicker">O que é?</span>
+              <h2>Tecnologia Smart Fraxion</h2>
+              <p>
+                O Smart Fraxion é a tecnologia de Laser CO2 desenvolvida para entregar resurfacing térmico ablativo de alta precisão, promovendo renovação cutânea e estímulo dérmico.
+              </p>
+
+              <ul class="feature-list">
+                <li>Atuação nos modos fracionado e não fracionado.</li>
+                <li>Personalização completa de parâmetros para protocolos superficiais e profundos.</li>
+                <li>Construção de estratégias clínicas para regeneração e remodelação dérmica.</li>
+                <li>Aplicações dermatológicas, ginecológicas e cirúrgicas.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="split-card">
+            <div class="split-media">
+              <a class="split-image-link image-slot" href="COLE-AQUI-O-LINK-DA-IMAGEM-EQUIPAMENTO-FRAXION" target="_blank" rel="noopener" aria-label="Abrir imagem do Smart Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/Aplicador+Fraxion+.png" alt="Smart Fraxion - equipamento ou aplicação" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Espaço para imagem do equipamento ou aplicação</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section white" id="laser-co2">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">O que é o Laser CO2?</span>
+            <h2>Energia luminosa com alta afinidade pela água.</h2>
+            <p>
+              O Laser CO2 utiliza uma mistura gasosa composta principalmente por dióxido de carbono, nitrogênio e hélio. Seu comprimento de onda específico, em torno de 10.600 nm, favorece calor controlado, vaporização do tecido e formação de microzonas térmicas.
+            </p>
+          </div>
+
+          <div class="cards-grid">
+            <article class="info-card">
+              <div class="info-icon blue">01</div>
+              <h3>Resurfacing térmico</h3>
+              <p>Abordagem ablativa para renovação cutânea com alta precisão clínica.</p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-icon blue">02</div>
+              <h3>Microzonas térmicas</h3>
+              <p>Formação de MTZs para estimular reparo, remodelação e produção de colágeno.</p>
+            </article>
+
+            <article class="info-card">
+              <div class="info-icon blue">03</div>
+              <h3>Controle total</h3>
+              <p>Ajustes de potência, energia, pulso, quadrante, distância, stacks e padrões de emissão.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section off" id="diferenciais">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Diferenciais</span>
+            <h2>Precisão clínica com controle avançado.</h2>
+            <p>
+              A plataforma foi desenvolvida para entregar personalização, segurança operacional e versatilidade na construção dos protocolos.
+            </p>
+          </div>
+
+          <div class="mode-grid">
+            <article class="mode-card">
+              <span class="mode-label">Plataforma híbrida</span>
+              <h3>Fracionado e ablativo</h3>
+              <p>Permite modular a atuação conforme profundidade, indicação e estratégia clínica.</p>
+            </article>
+
+            <article class="mode-card">
+              <span class="mode-label">Micro Coring</span>
+              <h3>Modo Coring</h3>
+              <p>Recurso pensado para ampliar possibilidades de remodelação e abordagem clínica personalizada.</p>
+            </article>
+
+            <article class="mode-card">
+              <span class="mode-label">Thermal Control</span>
+              <h3>Controle térmico</h3>
+              <p>Auxilia no gerenciamento da entrega de energia e no controle da resposta térmica.</p>
+            </article>
+
+            <article class="mode-card">
+              <span class="mode-label">LowPain</span>
+              <h3>Modo LowPain</h3>
+              <p>Recurso desenvolvido para favorecer conforto e experiência durante o procedimento.</p>
+            </article>
+
+            <article class="mode-card">
+              <span class="mode-label">Protocolos</span>
+              <h3>5 protocolos salvos</h3>
+              <p>Permite salvar protocolos personalizados para cada modo de uso.</p>
+            </article>
+
+            <article class="mode-card">
+              <span class="mode-label">Interface</span>
+              <h3>Compacto e inteligente</h3>
+              <p>Tecnologia ergonômica, intuitiva e voltada à rotina clínica de alta performance.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white" id="aplicacoes">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Para que serve?</span>
+            <h2>Aplicações para diferentes indicações clínicas.</h2>
+            <p>
+              O Fraxion permite construir protocolos personalizados para rejuvenescimento, textura, firmeza, discromias, aplicações ginecológicas e intervenções específicas.
+            </p>
+          </div>
+
+          <div class="indication-grid">
+            <article class="indication-card">
+              <span class="type-tag">Fracionado</span>
+              <strong>Rejuvenescimento facial e corporal</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag integrado">Integrado / fracionado</span>
+              <strong>Pro-aging: rugas e linhas de expressão</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag">Fracionado</span>
+              <strong>Cicatrizes de acne e marcas</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag">Fracionado</span>
+              <strong>Estrias</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag">Fracionado</span>
+              <strong>Discromias</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag">Fracionado</span>
+              <strong>Uniformização da textura e do tom da pele</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag">Fracionado</span>
+              <strong>Efeito glow</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag integrado">Profundo / fracionado</span>
+              <strong>Melhora da elasticidade e firmeza</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag gineco">Ginecológico</span>
+              <strong>Aplicações ginecológicas</strong>
+            </article>
+
+            <article class="indication-card">
+              <span class="type-tag ablativo">Ablativo</span>
+              <strong>Lesões específicas</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section off" id="mecanismo">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Como funciona na pele</span>
+            <h2>Mecanismo de ação em etapas.</h2>
+            <p>
+              A energia é absorvida pela água, gerando aquecimento rápido, vaporização tecidual, dano fracionado controlado e resposta dérmica progressiva.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <h3>Interação inicial</h3>
+              <p>Energia absorvida pela água, aquecimento rápido e vaporização tecidual.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <h3>Dano controlado</h3>
+              <p>Formação de microcolunas térmicas em áreas específicas da pele.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <h3>Efeito celular</h3>
+              <p>Ablação, coagulação térmica em profundidade e ativação do reparo.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">4</div>
+              <h3>Resposta dérmica</h3>
+              <p>Contração imediata do colágeno, neocolagênese e remodelação.</p>
+            </article>
+
+            <article class="step-card">
+              <div class="step-number">5</div>
+              <h3>Resultado clínico</h3>
+              <p>Reepitelização, melhora da firmeza e textura mais uniforme.</p>
+            </article>
+          </div>
+
+          <div class="visual-grid">
+            <article class="visual-card">
+              <a class="split-image-link image-slot" href="COLE-AQUI-O-LINK-DO-INFOGRAFICO-MECANISMO-FRAXION" target="_blank" rel="noopener" aria-label="Abrir infográfico do mecanismo do Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/camadas+de+pele+-+fraxion+1.png" alt="Infográfico de mecanismo de ação do Smart Fraxion" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Espaço para infográfico de mecanismo de ação</span>
+              </a>
+            </article>
+
+            <article class="visual-card">
+              <a class="split-image-link image-slot" href="COLE-AQUI-O-LINK-DOS-PADROES-DE-EMISSAO-FRAXION" target="_blank" rel="noopener" aria-label="Abrir imagem de padrões de emissão Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/camadas+de+pele+-+fraxion+2.png" alt="Padrões de emissão personalizáveis do Smart Fraxion" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Espaço para padrões de emissão personalizáveis</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section white" id="aplicadores">
+        <div class="container">
+          <div class="section-head">
+            <span class="kicker">Aplicadores</span>
+            <h2>Versatilidade clínica para adaptar protocolos.</h2>
+            <p>
+              A combinação de diferentes aplicadores e modos de emissão permite adaptar os protocolos às necessidades de cada região e indicação clínica.
+            </p>
+          </div>
+
+          <div class="applicators-grid">
+            <article class="applicator-card">
+              <a class="applicator-image image-slot" href="COLE-AQUI-O-LINK-DA-IMAGEM-PONTEIRA-PONTUAL-FRAXION" target="_blank" rel="noopener" aria-label="Abrir imagem da ponteira pontual Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/aplicadores/Aplicador+-+Spot.png" alt="Ponteira Pontual Fraxion" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Ponteira Pontual</span>
+              </a>
+
+              <div class="applicator-copy">
+                <span class="type-tag">Focal</span>
+                <h3>Ponteira Pontual (spot)</h3>
+                <p>Usada para tratamentos focais com maior precisão em áreas específicas.</p>
+                <ul class="mini-list">
+                  <li>Cicatrizes profundas</li>
+                  <li>Fibromas</li>
+                  <li>Resurfacing localizado</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="applicator-card">
+              <a class="applicator-image image-slot" href="COLE-AQUI-O-LINK-DA-IMAGEM-PONTEIRA-CIRURGICA-FRAXION" target="_blank" rel="noopener" aria-label="Abrir imagem da ponteira cirúrgica Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/aplicadores/Aplicador+-+Cirurgico.png" alt="Ponteira Cirúrgica Fraxion" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Ponteira Cirúrgica</span>
+              </a>
+
+              <div class="applicator-copy">
+                <span class="type-tag ablativo">Cirúrgica</span>
+                <h3>Ponteira Cirúrgica | Corte</h3>
+                <p>Emite feixe concentrado com espaçadores para trazer mais precisão e especificidade.</p>
+                <ul class="mini-list">
+                  <li>Remoção de lesões benignas</li>
+                  <li>Blefaroplastia não cirúrgica</li>
+                  <li>Xantelasma e verrugas</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="applicator-card">
+              <a class="applicator-image image-slot" href="COLE-AQUI-O-LINK-DA-IMAGEM-PONTEIRA-VAGINAL-FRAXION" target="_blank" rel="noopener" aria-label="Abrir imagem da ponteira vaginal Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/aplicadores/Aplicador+-+Vaginal+1.png" alt="Ponteira Vaginal Ginecológica Fraxion" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Ponteira Vaginal</span>
+              </a>
+
+              <div class="applicator-copy">
+                <span class="type-tag gineco">Ginecológica</span>
+                <h3>Ponteira Vaginal Ginecológica</h3>
+                <p>Possui formato tubular com scanner interno para aplicações ginecológicas.</p>
+                <ul class="mini-list">
+                  <li>Atrofia vaginal</li>
+                  <li>Laxidade / frouxidão vaginal</li>
+                  <li>Incontinência urinária leve</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="applicator-card">
+              <a class="applicator-image image-slot" href="COLE-AQUI-O-LINK-DA-IMAGEM-PONTEIRA-GINECOLOGICA-FRAXION" target="_blank" rel="noopener" aria-label="Abrir imagem da ponteira ginecológica Fraxion">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Fraxion/aplicadores/Aplicador+-+Vaginal+2.png" alt="Ponteira Ginecológica Fraxion" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Ponteira Ginecológica</span>
+              </a>
+
+              <div class="applicator-copy">
+                <span class="type-tag gineco">Ginecológica</span>
+                <h3>Aplicador ginecológico</h3>
+                <p>Permite adaptar protocolos ginecológicos com mais controle e precisão.</p>
+                <ul class="mini-list">
+                  <li>Flacidez</li>
+                  <li>Protocolos íntimos profissionais</li>
+                  <li>Personalização por indicação clínica</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-box">
+            <div>
+              <span>Atendimento consultivo</span>
+              <h2>Quer entender como o Smart Fraxion se encaixa na sua clínica?</h2>
+              <p>
+                Fale com um especialista Smart GR Tech para receber uma orientação sobre tecnologia, aplicações, modos de uso, aplicadores e posicionamento comercial para seus protocolos.
+              </p>
+            </div>
+
+            <div class="cta-actions">
+              <a href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20sobre%20o%20Smart%20Fraxion" target="_blank" rel="noopener">Falar com especialista</a>
+              <a class="secondary" href="index.html#equipamentos">Ver outros equipamentos</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <section class="footer-main">
+          <div class="container footer-grid">
+            <div class="footer-brand">
+              <a class="footer-logo" href="#top" aria-label="Smart GR Tech">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech" />
+              </a>
+
+              <p>
+                A divisão de equipamentos eletromédicos da Smart GR. Tecnologia, suporte e curadoria para elevar o posicionamento de clínicas de estética avançada.
+              </p>
+
+              <div class="footer-socials" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/smartgr.oficial/" target="_blank" rel="noopener" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 12 16.8a4.8 4.8 0 0 1 0-9.6Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2ZM17.1 6.7a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
+                  </svg>
+                </a>
+
+                <a href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener" aria-label="WhatsApp">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2a9.8 9.8 0 0 0-8.5 14.7L2.4 22l5.4-1.1A9.9 9.9 0 1 0 12 2Zm0 18a8 8 0 0 1-4-1.1l-.4-.2-3.2.7.7-3.1-.2-.5A8 8 0 1 1 12 20Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.9 10.9 0 0 0 4.2 3.7 8.5 8.5 0 0 0 1.4.5 3.4 3.4 0 0 0 1.5.1 2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.3-.2-.5-.3Z"/>
+                  </svg>
+                </a>
+
+                <a href="https://www.youtube.com/@SmartGR" target="_blank" rel="noopener" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10 15.3V8.7l5.7 3.3Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <h3>Smart GR Tech</h3>
+              <a href="HOME PAGE - LP TECH.html#equipamentos">Equipamentos</a>
+              <a href="HOME PAGE - LP TECH.html#tratamentos">Tratamentos</a>
+              <a href="HOME PAGE - LP TECH.html#suporte">Suporte</a>
+              <a href="HOME PAGE - LP TECH.html#faq">FAQ</a>
+              <a href="index.html#area-exclusiva">Área exclusiva</a>
+            </div>
+
+            <div class="footer-col">
+              <h3>Grupo Smart GR</h3>
+              <a href="https://smartgr.com.br/" target="_blank" rel="noopener">Site Smart GR</a>
+              <a href="https://smartgr.com.br/blogs/news" target="_blank" rel="noopener">Blog</a>
+              <a href="https://smartgr.com.br/pages/agenda-de-eventos" target="_blank" rel="noopener">Agenda de eventos</a>
+              <a href="https://smartgr.com.br/pages/seja-um-revendedor" target="_blank" rel="noopener">Seja um revendedor</a>
+            </div>
+
+            <div class="footer-col footer-contact">
+              <h3>Atendimento</h3>
+              <a href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">WhatsApp comercial</a>
+              <a href="mailto:atendimento@smartgr.com.br">atendimento@smartgr.com.br</a>
+              <p>Segunda a sexta, das 9h às 18h.</p>
+              <a class="footer-contact-btn" href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Falar com especialista</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-bottom">
+          <div class="container footer-bottom-inner">
+            <p>© Smart GR Tech. Todos os direitos reservados.</p>
+            <p>Uma divisão de tecnologia do Grupo Smart GR.</p>
+          </div>
+        </section>
+      </footer>
+    </main>
+
+    <script>
+      const mobileMenuButton = document.querySelector('.mobile-menu');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+      if (mobileMenuButton && mobileNav) {
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenuButton.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+
+          const isOpen = mobileNav.classList.contains('active');
+
+          mobileMenuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          mobileMenuButton.innerHTML = isOpen ? '×' : '☰';
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenuButton.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenuButton.innerHTML = '☰';
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart GR Tech | Hub Comercial</title>
+  <meta name="description" content="Hub comercial da Smart GR Tech: equipamentos eletromédicos, tecnologias, suporte e área exclusiva para clientes." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --off: #f5f8fb;
+      --ink: #07111f;
+      --text: #314057;
+      --muted: #718198;
+      --line: #dce7f1;
+      --blue: #00b8ef;
+      --blue-2: #0077ff;
+      --blue-dark: #003f88;
+      --shadow-soft: 0 16px 38px rgba(8, 23, 42, .08);
+      --max: 1200px;
+    }
+    /* FOOTER SMART GR TECH */
+    .site-footer {
+  background: #ffffff;
+  color: var(--text);
+}
+
+.footer-newsletter {
+  background: #1c2b44;
+  padding: 46px 0;
+  color: #ffffff;
+}
+
+.footer-newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 34px;
+}
+
+.footer-newsletter span {
+  display: block;
+  margin-bottom: 10px;
+  color: #9ec7ff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.footer-newsletter h2 {
+  max-width: 680px;
+  color: #ffffff;
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -.055em;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter p {
+  max-width: 640px;
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-form {
+  width: min(100%, 430px);
+  display: flex;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.footer-form input {
+  width: 100%;
+  min-height: 46px;
+  border: 0;
+  outline: 0;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1c2b44;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.footer-form input::placeholder {
+  color: #8a98aa;
+}
+
+.footer-form button {
+  min-height: 46px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1c2b44;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+.footer-form button:hover {
+  transform: translateY(-1px);
+}
+
+.footer-main {
+  padding: 58px 0 46px;
+  background: #ffffff;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.45fr .75fr .85fr 1fr;
+  gap: 42px;
+}
+
+.footer-brand {
+  max-width: 390px;
+}
+
+.footer-logo {
+  width: 210px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 100%;
+  max-height: 46px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.footer-brand p {
+  color: #5f6f85;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #f3f8fd;
+  border: 1px solid var(--line);
+  color: #1c2b44;
+  transition: .2s ease;
+}
+
+.footer-socials a:hover {
+  background: #1c2b44;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.footer-socials svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.footer-col h3 {
+  color: #181818;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.footer-col a {
+  width: fit-content;
+  display: block;
+  color: #5f6f85;
+  font-size: 14px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  transition: .2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--blue-2);
+  transform: translateX(2px);
+}
+
+.footer-contact p {
+  color: #718198;
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 4px 0 18px;
+}
+
+.footer-contact-btn {
+  width: fit-content !important;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: #1c2b44;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px !important;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.footer-contact-btn:hover {
+  transform: translateY(-1px) !important;
+}
+
+.footer-bottom {
+  background: #f5f8fb;
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.footer-bottom p {
+  color: #718198;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+   /* TRATAMENTOS / CARROSSEL */
+.treatments-section {
+  padding: 56px 0 64px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.treatments-header {
+  max-width: 980px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.treatments-header span {
+  display: block;
+  margin-bottom: 6px;
+  color: #181818;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.treatments-header h2 {
+  color: #181818;
+  font-size: clamp(30px, 8vw, 42px);
+  line-height: 0.95;
+  font-weight: 600;
+}
+
+.treatments-slider-wrap {
+  position: relative;
+}
+
+.treatments-slider {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 2px 10px;
+}
+
+.treatments-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.treatment-card {
+  flex: 0 0 calc((100% - 44px) / 3);
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.treatment-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1.28;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 14px 34px rgba(8, 23, 42, .08);
+}
+
+.treatment-card h3 {
+  color: #5a5f66;
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.treatments-arrow {
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: #1c2b44;
+  font-size: 34px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(8, 23, 42, .14);
+  transition: .2s ease;
+}
+
+.treatments-arrow:hover {
+  transform: translateY(-50%) scale(1.04);
+}
+
+.treatments-arrow.prev {
+  left: -18px;
+}
+
+.treatments-arrow.next {
+  right: -18px;
+}
+
+
+    /* SUPORTE */
+.support-section {
+  padding: 48px 0 48px;
+  background: var(--off);
+}
+
+.support-header {
+  max-width: 760px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.support-header span {
+  display: block;
+  margin-bottom: 12px;
+  color: #383d43;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.support-header h2 {
+  color: #181818;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -.055em;
+  margin-bottom: 14px;
+}
+
+.support-header p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.support-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 26px 22px;
+  box-shadow: var(--shadow-soft);
+  transition: .24s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0,184,239,.42);
+  box-shadow: 0 24px 54px rgba(8,23,42,.12);
+}
+
+.support-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: #1c2b44;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.support-card h3 {
+  color: #181818;
+  font-size: 21px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  margin-bottom: 10px;
+}
+
+.support-card p {
+  color: #5f6f85;
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.support-cta {
+  margin-top: 24px;
+  background: #1c2b44;
+  border-radius: 28px;
+  padding: 30px 34px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
+  box-shadow: 0 18px 44px rgba(28, 43, 68, .16);
+}
+
+.support-cta strong {
+  display: block;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.14;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  margin-bottom: 8px;
+}
+
+.support-cta p {
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.support-cta a {
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1c2b44;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: .2s ease;
+}
+
+.support-cta a:hover {
+  transform: translateY(-1px);
+}
+
+    .seller-cta {
+  padding: 18px 0 72px;
+  background: var(--off);
+}
+
+.seller-cta-box {
+  background: #1c2b44;
+  border-radius: 28px;
+  padding: 34px 38px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
+  box-shadow: 0 18px 44px rgba(28, 43, 68, .16);
+}
+
+.seller-cta-content span {
+  display: block;
+  margin-bottom: 10px;
+  color: #9ec7ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.seller-cta-content h2 {
+  color: #ffffff;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  margin-bottom: 10px;
+}
+
+.seller-cta-content p {
+  max-width: 620px;
+  color: rgba(255,255,255,.74);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.seller-cta-btn {
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1c2b44;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: .2s ease;
+}
+
+.seller-cta-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+    .faq-section {
+  padding: 48px 0 48px;
+  background: var(--off);
+}
+
+.faq-header {
+  max-width: 720px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.faq-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: #383d43;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.faq-header h2 {
+  color: #181818;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -.055em;
+  margin-bottom: 14px;
+}
+
+.faq-header p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.faq-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  min-height: 74px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fafd;
+  border: 1px solid var(--line);
+  color: var(--blue-2);
+  font-size: 22px;
+  font-weight: 500;
+  transition: .2s ease;
+}
+
+.faq-item[open] .faq-icon {
+  transform: rotate(45deg);
+  background: #1c2b44;
+  color: #ffffff;
+  border-color: #1c2b44;
+}
+
+.faq-item p {
+  padding: 0 24px 24px;
+  color: #5f6f85;
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+    .hero-mobile-btn {
+  display: none;
+}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--off);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAV */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(220,231,241,.85);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .brand-logo {
+      width: 210px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      max-height: 46px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .menu a {
+      color: #5f6f85;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: color .2s ease;
+    }
+
+    .menu a:hover {
+      color: var(--blue-2);
+    }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 19px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-outline {
+      color: var(--ink);
+      background: var(--white);
+      border-color: var(--line);
+      box-shadow: 0 8px 24px rgba(8,23,42,.05);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue-2);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: #1c2b44;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    /* BANNER FULL WIDTH SEM TEXTO */
+    .hero-banner {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #e8f4ff;
+      line-height: 0;
+    }
+
+    .hero-carousel {
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hero-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      scroll-snap-align: start;
+    }
+
+    .hero-banner-link {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: clamp(260px, 30vw, 430px);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* EQUIPAMENTOS */
+    .products-section {
+      padding: 48px 0 48px;
+    }
+
+    .section-title-block {
+      max-width: 780px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: #383d43;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2, h3 {
+      font-family: "Inter", system-ui, sans-serif;
+      color: #181818;
+      letter-spacing: -.055em;
+    }
+
+    .section-title-block h2 {
+      font-size: clamp(30px, 8vw, 42px);
+      font-weight: 600;
+      margin-bottom: 16px;
+}
+
+    .section-title-block p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      min-height: 430px;
+      border-radius: 28px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      transition: .24s ease;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0,184,239,.42);
+      box-shadow: 0 26px 60px rgba(8,23,42,.13);
+    }
+
+    .product-image {
+      height: 240px;
+      border-radius: 22px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .product-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 11px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: #f3f8fd;
+      border: 1px solid var(--line);
+      color: var(--blue-dark);
+    }
+
+    .arrow {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: #f3f8fd;
+      border: 1px solid var(--line);
+      color: var(--blue-2);
+      font-weight: 900;
+    }
+
+    .product-card h3 {
+      font-size: 24px;
+      line-height: 1.05;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: #5f6f85;
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 20px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: #526177;
+      background: #f7fafd;
+      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .card-btn {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid var(--line);
+    }
+
+    .card-btn.primary {
+      color: var(--white);
+      background: #1c2b44;
+      border-color: transparent;
+    }
+
+    .card-btn.secondary {
+      color: var(--ink);
+      background: #f7fafd;
+    }
+
+    .card-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 1040px) {
+
+       .seller-cta {
+    padding: 10px 0 58px;
+  }
+
+  .seller-cta-box {
+    grid-template-columns: 1fr;
+    padding: 28px 22px;
+    border-radius: 24px;
+    text-align: center;
+    gap: 22px;
+  }
+
+  .seller-cta-content h2 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .seller-cta-content p {
+    font-size: 14px;
+  }
+
+  .seller-cta-btn {
+    width: 100%;
+  }
+
+      .nav-inner {
+        grid-template-columns: auto auto;
+      }
+
+      .menu,
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: inline-grid;
+        place-items: center;
+        margin-left: auto;
+      }
+
+      .brand-logo {
+        width: 190px;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      .footer-newsletter {
+    padding: 38px 0;
+  }
+
+  .footer-newsletter-inner {
+    gap: 24px;
+    text-align: center;
+  }
+
+  .footer-newsletter h2 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .footer-newsletter p {
+    font-size: 14px;
+  }
+
+  .footer-form {
+    flex-direction: column;
+    border-radius: 24px;
+    padding: 10px;
+  }
+
+  .footer-form input,
+  .footer-form button {
+    width: 100%;
+  }
+
+  .footer-main {
+    padding: 44px 0 34px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto 18px;
+    width: 190px;
+  }
+
+  .footer-socials {
+    justify-content: center;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-col a,
+  .footer-contact-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand-logo {
+        width: 160px;
+        height: 40px;
+      }
+
+      .brand-logo img {
+        max-height: 40px;
+      }
+
+      .hero-banner-img {
+        height: 440px;
+        object-position: center bottom;
+      }
+
+      .products-section {
+        padding: 56px 0 70px;
+      }
+
+      .section-title-block {
+        margin-bottom: 26px;
+      }
+
+      .section-title-block h2 {
+      font-size: clamp(26px, 8vw, 38px);
+      font-weight: 600;
+     }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        min-height: auto;
+      }
+
+      .card-actions {
+        grid-template-columns: 1fr;
+      }
+
+        .hero-banner-link {
+    position: relative;
+  }
+
+  .hero-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 34px;
+    transform: translateX(-50%);
+    z-index: 5;
+
+    min-width: 220px;
+    height: 48px;
+    padding: 0 28px;
+    border-radius: 999px;
+
+    background: #425f98;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    box-shadow: 0 14px 34px rgba(28, 43, 68, 0.28);
+  }
+
+  .faq-section {
+    padding-top: 44px;
+  }
+
+  .faq-header {
+    margin-bottom: 26px;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .faq-header p {
+    font-size: 15px;
+  }
+
+  .faq-list {
+    gap: 12px;
+  }
+
+  .faq-item {
+    border-radius: 18px;
+  }
+
+  .faq-item summary {
+    min-height: auto;
+    padding: 19px 18px;
+    font-size: 15px;
+    align-items: flex-start;
+  }
+
+  .faq-icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 20px;
+  }
+
+  .faq-item p {
+    padding: 0 18px 20px;
+    font-size: 14px;
+  }
+
+   .support-section {
+    padding: 48px 0 48px;
+  }
+
+  .support-header {
+    margin-bottom: 28px;
+  }
+
+  .support-header h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .support-header p {
+    font-size: 15px;
+  }
+
+  .support-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .support-card {
+    border-radius: 22px;
+    padding: 24px 20px;
+  }
+
+  .support-card h3 {
+    font-size: 20px;
+  }
+
+  .support-cta {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 28px 22px;
+    border-radius: 24px;
+    gap: 22px;
+  }
+
+  .support-cta strong {
+    font-size: 23px;
+  }
+
+  .support-cta a {
+    width: 100%;
+  }
+
+    }
+
+    /* AJUSTE TRATAMENTOS: altura menor das imagens e correção mobile */
+    .treatment-card img {
+      height: 260px;
+      aspect-ratio: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (max-width: 1040px) {
+      .treatment-card {
+        flex: 0 0 calc((100% - 22px) / 2);
+      }
+
+      .treatment-card img {
+        height: 240px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .treatments-section {
+        padding: 42px 0 46px;
+      }
+
+      .treatments-header {
+        margin-bottom: 22px;
+      }
+
+      .treatments-header span {
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .treatments-header h2 {
+        font-size: clamp(26px, 8vw, 36px);
+        line-height: 1.05;
+      }
+
+      .treatments-slider {
+        gap: 14px;
+        padding: 0 0 8px;
+      }
+
+      .treatment-card {
+        flex: 0 0 76%;
+      }
+
+      .treatment-card img {
+        height: 210px;
+        border-radius: 14px;
+        margin-bottom: 10px;
+      }
+
+      .treatment-card h3 {
+        font-size: 15px;
+      }
+
+      .treatments-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 28px;
+        top: 50%;
+      }
+
+      .treatments-arrow.prev {
+        left: 6px;
+      }
+
+      .treatments-arrow.next {
+        right: 6px;
+      }
+    }
+
+    /* MENU MOBILE FUNCIONAL */
+    .mobile-nav {
+      display: none;
+    }
+
+    @media (max-width: 1040px) {
+      .mobile-nav {
+        position: fixed;
+        top: 74px;
+        left: 0;
+        right: 0;
+        z-index: 49;
+
+        display: flex;
+        flex-direction: column;
+
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 38px rgba(8, 23, 42, .10);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-12px);
+        transition: .24s ease;
+      }
+
+      .mobile-nav.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mobile-nav a {
+        padding: 18px 24px;
+        color: #5f6f85;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mobile-nav a:hover {
+        color: var(--blue-2);
+      }
+
+      .mobile-nav-btn {
+        margin: 18px 24px 24px;
+        min-height: 48px;
+        border-radius: 999px;
+        background: #1c2b44;
+        color: #ffffff !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-bottom: none !important;
+      }
+
+      .mobile-menu.active {
+        background: #1c2b44;
+        color: #ffffff;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .mobile-nav {
+        top: 68px;
+      }
+    }
+
+
+    /* AJUSTE CARROSSEL TRATAMENTOS: evita corte lateral e preserva sombra */
+    .treatments-section {
+      overflow: visible;
+    }
+
+    .treatments-slider-wrap {
+      padding: 0 28px;
+      margin: 0 -28px;
+      overflow: visible;
+    }
+
+    .treatments-slider {
+      padding: 8px 28px 26px;
+      margin: -8px -28px -26px;
+      scroll-padding-left: 28px;
+    }
+
+    .treatments-arrow.prev {
+      left: 4px;
+    }
+
+    .treatments-arrow.next {
+      right: 4px;
+    }
+
+    @media (max-width: 700px) {
+      .treatments-slider-wrap {
+        padding: 0 18px;
+        margin: 0 -18px;
+      }
+
+      .treatments-slider {
+        padding: 8px 18px 22px;
+        margin: -8px -18px -22px;
+        scroll-padding-left: 18px;
+      }
+
+      .treatments-arrow.prev {
+        left: 6px;
+      }
+
+      .treatments-arrow.next {
+        right: 6px;
+      }
+    }
+
+
+  
+    /* AJUSTE MOBILE: remove setas do carrossel de tratamentos apenas no mobile */
+    @media (max-width: 700px) {
+      .treatments-arrow {
+        display: none;
+      }
+    }
+
+
+    /* AJUSTE MOBILE: tratamentos em 2 colunas visíveis */
+    @media (max-width: 700px) {
+      .treatment-card {
+        flex: 0 0 calc((100% - 12px) / 2);
+      }
+
+      .treatments-slider {
+        gap: 12px;
+      }
+
+      .treatment-card img {
+        height: clamp(145px, 42vw, 180px);
+      }
+
+      .treatment-card h3 {
+        font-size: 14px;
+      }
+    }
+
+
+    /* CONTROLES CLICÁVEIS DO BANNER */
+    .hero-slider-controls {
+      width: 100%;
+      background: #ffffff;
+      padding: 14px 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+    }
+
+    .hero-slider-controls-inner {
+      width: fit-content;
+      margin: 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .hero-control {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      background: transparent;
+      color: #2d5f98;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      transition: .2s ease;
+    }
+
+    .hero-control svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+      stroke: currentColor;
+      stroke-width: 2.4;
+    }
+
+    .hero-control:hover {
+      color: #1c2b44;
+      transform: translateY(-1px);
+    }
+
+    .hero-dots {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .hero-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      border: 0;
+      background: #d5e0ec;
+      cursor: pointer;
+      padding: 0;
+      transition: .2s ease;
+    }
+
+    .hero-dot.active {
+      background: #2d5f98;
+      transform: scale(1.08);
+    }
+
+    @media (max-width: 700px) {
+      .hero-slider-controls {
+        padding: 12px 0 8px;
+      }
+
+      .hero-slider-controls-inner {
+        gap: 11px;
+      }
+
+      .hero-control {
+        width: 24px;
+        height: 24px;
+      }
+
+      .hero-control svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .hero-dots {
+        gap: 8px;
+      }
+
+      .hero-dot {
+        width: 5px;
+        height: 5px;
+      }
+    }
+
+
+    /* AJUSTE NEWSLETTER: disposição tipo card com texto + formulário */
+    .footer-newsletter {
+      background: #ffffff;
+      padding: 24px 0;
+    }
+
+    .footer-newsletter-inner {
+      background: #1c2b44;
+      border-radius: 28px;
+      padding: 38px 40px;
+      display: grid;
+      grid-template-columns: minmax(260px, .85fr) minmax(420px, 1.15fr);
+      align-items: center;
+      gap: 38px;
+    }
+
+    .footer-newsletter h2 {
+      max-width: 100%;
+      font-size: clamp(26px, 2.4vw, 34px);
+      margin-bottom: 8px;
+    }
+
+    .footer-newsletter p {
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .footer-form {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .footer-form input {
+      min-height: 52px;
+      border: 1px solid rgba(255,255,255,.34);
+    }
+
+    .footer-form button {
+      min-width: 180px;
+      min-height: 52px;
+      padding: 0 28px;
+    }
+
+    @media (max-width: 700px) {
+      .footer-newsletter {
+        padding: 16px 0 24px;
+      }
+
+      .footer-newsletter-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 26px 16px 22px;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .footer-newsletter span {
+        display: none;
+      }
+
+      .footer-newsletter h2 {
+        font-size: 20px;
+        line-height: 1.12;
+        letter-spacing: -.04em;
+        margin-bottom: 6px;
+      }
+
+      .footer-newsletter p {
+        font-size: 14px;
+        line-height: 1.35;
+      }
+
+      .footer-form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+      }
+
+      .footer-form input {
+        width: 100%;
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 12px;
+      }
+
+      .footer-form button {
+        width: auto;
+        min-width: 112px;
+        min-height: 40px;
+        padding: 0 16px;
+        font-size: 12px;
+      }
+    }
+
+
+
+    /* AJUSTE CTA SUPORTE: diagnóstico consultivo */
+    .support-cta {
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
+      align-items: center;
+      gap: 34px;
+      padding: 34px 38px;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .support-cta::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 999px;
+      background: rgba(158, 199, 255, .18);
+      filter: blur(4px);
+      z-index: -1;
+    }
+
+    .support-cta-copy span {
+      display: block;
+      margin-bottom: 10px;
+      color: #9ec7ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .support-cta-copy strong {
+      display: block;
+      max-width: 760px;
+    }
+
+    .support-cta-copy p {
+      max-width: 620px;
+      margin-top: 10px;
+    }
+
+    .support-cta-copy a {
+      width: fit-content;
+      margin-top: 24px;
+    }
+
+    .support-cta-panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .support-panel-tag {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .support-panel-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .support-panel-item {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .support-panel-item > span {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1c2b44;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .support-panel-item b {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    .support-panel-item small {
+      display: block;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1040px) {
+      .support-cta {
+        grid-template-columns: 1fr;
+        padding: 32px 28px;
+        text-align: center;
+      }
+
+      .support-cta-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .support-cta-copy a {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .support-cta-panel {
+        width: 100%;
+        max-width: 620px;
+        margin: 0 auto;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .support-cta {
+        gap: 22px;
+        padding: 28px 20px;
+        border-radius: 24px;
+      }
+
+      .support-cta-copy span {
+        font-size: 11px;
+      }
+
+      .support-cta-copy strong {
+        font-size: 23px;
+      }
+
+      .support-cta-copy p {
+        font-size: 14px;
+      }
+
+      .support-cta-copy a {
+        max-width: none;
+        margin-top: 20px;
+      }
+
+      .support-cta-panel {
+        border-radius: 20px;
+        padding: 14px;
+      }
+
+      .support-panel-item {
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        padding: 12px;
+      }
+
+      .support-panel-item > span {
+        width: 34px;
+        height: 34px;
+        font-size: 11px;
+      }
+    }
+
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/icon/icon+tech+-+32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/icon/icon+tech+-+180x180.png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav-bar">
+    <div class="container nav-inner">
+      <a class="brand-logo" href="HOME PAGE - LP TECH.html" aria-label="Smart GR Tech">
+        <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech" />
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="#top">Home</a>
+        <a href="#equipamentos">Produtos</a>
+        <a href="#suporte">Suporte</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+       <!--  <a class="btn btn-outline" href="#area-exclusiva">Área exclusiva</a>-->
+        <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20sobre%20a%20Smart%20GR%20Tech" target="_blank" rel="noopener">Falar com especialista</a>
+        <button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+    <a href="#top">Home</a>
+    <a href="#equipamentos">Produtos</a>
+    <a href="#suporte">Suporte</a>
+    <a href="#faq">FAQ</a>
+
+    <a
+      class="mobile-nav-btn"
+      href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech"
+      target="_blank"
+      rel="noopener"
+    >
+      Falar com especialista
+    </a>
+  </nav>
+
+  <!-- BANNER -->
+  <main id="top">
+    <section class="hero-banner" aria-label="Banner principal Smart GR Tech">
+      <div class="hero-carousel" id="heroBannerSlider">
+        <div class="hero-slide">
+          <a class="hero-banner-link" href="PDP - MAXIMUS PLASMA.html" aria-label="Conhecer equipamentos Smart GR Tech">
+            <picture>
+              <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech+-+mobile.png" />
+              <img class="hero-banner-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech.png" alt="Banner Smart GR Tech 1" />
+            </picture>      
+          </a>
+        </div>
+
+        <div class="hero-slide">
+          <a class="hero-banner-link" href="PDP - MAXIMUS LIFT.html" aria-label="Conhecer equipamentos Smart GR Tech">
+            <picture>
+              <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech+-+mobile+3.png" />
+              <img class="hero-banner-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech+-+desk+3.png" alt="Banner Smart GR Tech 3" />
+            </picture>
+            
+          </a>
+        </div>
+
+        <div class="hero-slide">
+          <a class="hero-banner-link" href="PDP - DEEP LASER.html" aria-label="Conhecer equipamentos Smart GR Tech">
+            <picture>
+              <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Mobile.png" />
+              <img class="hero-banner-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Desktop.png" alt="Banner Smart GR Tech 3" />
+            </picture>
+            
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hero-slider-controls" aria-label="Controles do banner">
+      <div class="hero-slider-controls-inner">
+        <button class="hero-control prev" type="button" aria-label="Banner anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M15 18l-6-6 6-6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+
+        <div class="hero-dots" aria-label="Selecionar banner">
+          <button class="hero-dot active" type="button" aria-label="Ir para o banner 1"></button>
+          <button class="hero-dot" type="button" aria-label="Ir para o banner 2"></button>
+          <button class="hero-dot" type="button" aria-label="Ir para o banner 3"></button>
+        </div>
+
+        <button class="hero-control next" type="button" aria-label="Próximo banner">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M9 6l6 6-6 6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+   <!-- TRATAMENTOS / CARROSSEL -->
+<section class="treatments-section" id="tratamentos">
+  <div class="container">
+    <div class="treatments-header">
+      <span>Tecnologia para protocolos mais completos</span>
+      <h2>Soluções Smart GR Tech para diferentes áreas</h2>
+    </div>
+
+    <div class="treatments-slider-wrap">
+      <button class="treatments-arrow prev" type="button" aria-label="Tratamento anterior">‹</button>
+
+      <div class="treatments-slider" id="treatmentsSlider">
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/lifting.jpg" alt="Lifting facial">
+          <h3>Lifting facial</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/flacidez.jpg" alt="Flacidez">
+          <h3>Flacidez</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/rejuveescimento.jpg" alt="Rejuvenescimento">
+          <h3>Rejuvenescimento</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/cicatrizes.jpg" alt="Estrias e cicatrizes">
+          <h3>Estrias e cicatrizes</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/melasma.jpg" alt="Melasma e manchas">
+          <h3>Melasma e manchas</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/acne.jpg" alt="Acne ativa">
+          <h3>Acne ativa</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/remodela%C3%A7%C3%A3o.jpg" alt="Remodelação corporal">
+          <h3>Remodelação corporal</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/varizes.jpg" alt="Tratamento vascular">
+          <h3>Tratamento vascular</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/capilar.jpg" alt="Capilar">
+          <h3>Capilar</h3>
+        </article>
+
+        <article class="treatment-card">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/intimo.jpg" alt="Íntimo">
+          <h3>Íntimo</h3>
+        </article>
+      </div>
+
+      <button class="treatments-arrow next" type="button" aria-label="Próximo tratamento">›</button>
+    </div>
+  </div>
+</section>
+
+    <!-- CARDS PRODUTOS -->
+    <section class="products-section" id="equipamentos" aria-label="Equipamentos Smart GR Tech">
+      <div class="container">
+        <div class="section-title-block">
+          <div class="section-kicker">Equipamentos</div>
+          <h2>Conheça as tecnologias Smart GR Tech</h2>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+maximus+card+LP+tech.png" alt="Smart Maximus Lift"></div>
+            <div class="product-topline">
+              <span class="tag">Ultrassom micro e macrofocado + RF</span>
+            </div>
+            <h3>Smart Maximus Lift</h3>
+            <p>Radiofrequência microagulhada para protocolos de firmeza, textura, sustentação e reposicionamento tecnológico da clínica.</p>
+            <div class="chips">
+              <span class="chip">RF até 7 mm</span>
+              <span class="chip">Corporal até 16 mm</span>
+              <span class="chip">Textura</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-btn primary" href="PDP - MAXIMUS LIFT.html">Ver página</a>
+              <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Proposta</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+HIFU+card+LP+tech.png" alt="Smart Multi HIFU"></div>
+            <div class="product-topline">
+              <span class="tag">ULTRASSOM MICRO E MACROFOCADO</span>
+            </div>
+            <h3>Smart Multi HIFU</h3>
+            <p>Ultrassom micro e macrofocado para protocolos de lifting, contorno e tecnologias não invasivas em diferentes profundidades.</p>
+            <div class="chips">
+              <span class="chip">Microfocado</span>
+              <span class="chip">Macrofocado</span>
+              <span class="chip">Face e corpo</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-btn primary" href="PDP - MULTI HIFU.html">Ver página</a>
+              <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+meso+pro+card+LP+tech.png" alt="Smart MesoPro">  </div>
+            <div class="product-topline">
+              <span class="tag">Eletroporação</span>
+            </div>
+            <h3>Smart Meso Pro</h3>
+            <p>Equipamento para permeação de ativos sem agulhas, com aplicadores para protocolos faciais, corporais e capilares.</p>
+            <div class="chips">
+              <span class="chip">Sem agulhas</span>
+              <span class="chip">Drug delivery</span>
+              <span class="chip">Capilar</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-btn primary" href="PDP - MESOPRO.html">Ver página</a>
+              <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+plasma+card+LP+tech.png" alt="Smart Maximus Plasma"></div>
+            <div class="product-topline">
+              <span class="tag">Plasma dual</span>
+            </div>
+            <h3>Smart Maximus Plasma</h3>
+            <p>Plataforma com plasma frio e plasma quente para ampliar possibilidades em protocolos estéticos e dermatológicos.</p>
+            <div class="chips">
+              <span class="chip">Frio + quente</span>
+              
+              <span class="chip">Versatilidade</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-btn primary" href="PDP - MAXIMUS PLASMA.html">Ver página</a>
+              <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+deep+laser+card+LP+tech.png" alt="Smart Deep Laser"></div>
+            <div class="product-topline">
+              <span class="tag">Laser subdérmico</span>
+            </div>
+            <h3>Smart Deep Laser</h3>
+            <p>Laser subdérmico para protocolos avançados de contorno, retração tecidual e abordagem tecnológica em face e corpo.</p>
+            <div class="chips">
+              <span class="chip">980 + 1470 nm</span>
+              <span class="chip">Face e corpo</span>
+              <span class="chip">Alta precisão</span>
+            </div>
+            <div class="card-actions">
+              <a class="card-btn primary" href="PDP - DEEP LASER.html">Ver página</a>
+              <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- SUPORTE -->
+<section class="support-section" id="suporte">
+  <div class="container">
+    <div class="support-header">
+      <span>Suporte</span>
+      <h2>Você não compra só um equipamento. Você acessa uma estrutura Smart GR Tech</h2>
+      <p>
+        Conte com orientação comercial, suporte técnico e direcionamento para ajudar sua clínica a escolher, operar e evoluir com mais segurança.
+      </p>
+    </div>
+
+    <div class="support-grid">
+      <article class="support-card">
+        <div class="support-icon">01</div>
+        <h3>Atendimento consultivo</h3>
+        <p>
+          Um especialista entende o perfil da sua clínica e indica a tecnologia mais alinhada aos seus objetivos comerciais e técnicos.
+        </p>
+      </article>
+
+      <article class="support-card">
+        <div class="support-icon">02</div>
+        <h3>Treinamento e capacitação</h3>
+        <p>
+          Direcionamento para uso do equipamento, possibilidades de protocolos e melhor aproveitamento da tecnologia na rotina clínica.
+        </p>
+      </article>
+
+      <article class="support-card">
+        <div class="support-icon">03</div>
+        <h3>Suporte técnico</h3>
+        <p>
+          Canal de apoio para dúvidas, manutenção, orientações operacionais e acompanhamento após a aquisição do equipamento.
+        </p>
+      </article>
+    </div>
+
+    <div class="support-cta">
+      <div class="support-cta-copy">
+        <span>Atendimento consultivo</span>
+        <strong>Quer entender qual equipamento combina com sua clínica?</strong>
+        <p>Fale com o time Smart GR Tech e receba uma orientação personalizada para escolher a tecnologia mais estratégica.</p>
+
+        <a 
+          href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech"
+          target="_blank"
+          rel="noopener"
+        >
+          Falar com especialista
+        </a>
+      </div>
+
+      <div class="support-cta-panel" aria-label="Etapas do atendimento consultivo">
+        <div class="support-panel-tag">Diagnóstico rápido</div>
+
+        <div class="support-panel-list">
+          <div class="support-panel-item">
+            <span>01</span>
+            <div>
+              <b>Perfil da clínica</b>
+              <small>Objetivo, público e protocolos atuais.</small>
+            </div>
+          </div>
+
+          <div class="support-panel-item">
+            <span>02</span>
+            <div>
+              <b>Tecnologia ideal</b>
+              <small>Indicação alinhada à sua estratégia.</small>
+            </div>
+          </div>
+
+          <div class="support-panel-item">
+            <span>03</span>
+            <div>
+              <b>Próximo passo</b>
+              <small>Proposta, suporte e direcionamento.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <span class="faq-kicker">FAQ</span>
+      <h2>Perguntas frequentes</h2>
+      <p>
+        Tire as principais dúvidas sobre os equipamentos Smart GR Tech, suporte, compra e área exclusiva.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>
+          <span>O que é a Smart GR Tech?</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>
+          A Smart GR Tech reúne equipamentos desenvolvidos para clínicas e profissionais que buscam tecnologia, performance e diferenciação em protocolos estéticos avançados.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Quais tecnologias fazem parte da linha Smart GR Tech?</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>
+          A linha conta com equipamentos de laser, ultrassom, radiofrequência, plasma, eletroporação e outras tecnologias voltadas para protocolos faciais, corporais, capilares e íntimos.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Como saber qual equipamento é ideal para minha clínica?</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>
+          A escolha depende do perfil da sua clínica, dos procedimentos que você deseja oferecer, do público atendido e dos seus objetivos comerciais. Nossa equipe pode auxiliar nessa análise.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Os equipamentos acompanham treinamento?</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>
+          Sim. A Smart GR valoriza a capacitação profissional e oferece orientação para que o equipamento seja utilizado com mais segurança, estratégia e performance nos atendimentos.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Existe suporte após a compra do equipamento?</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>
+          Sim. O profissional conta com suporte para dúvidas, orientações de uso e acompanhamento após a aquisição do equipamento.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <span>Os equipamentos podem ser usados em quais áreas?</span>
+          <span class="faq-icon">+</span>
+        </summary>
+        <p>
+          As tecnologias Smart GR Tech podem ser aplicadas em diferentes protocolos faciais, corporais, capilares e íntimos, conforme a indicação de cada equipamento e a habilitação do profissional.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER SMART GR TECH -->
+<footer class="site-footer">
+  <section class="footer-newsletter">
+    <div class="container footer-newsletter-inner">
+      <div>
+        <span>Smart GR Tech</span>
+        <h2>Receba novidades Smart GR Tech.</h2>
+        <p>
+          Tecnologias, eventos e lançamentos direto no seu e-mail.
+        </p>
+      </div>
+
+      <form class="footer-form" action="#" method="post">
+        <input type="email" name="email" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail">
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="#top" aria-label="Smart GR Tech">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech">
+        </a>
+
+        <p>
+          A divisão de equipamentos eletromédicos da Smart GR. Tecnologia, suporte e curadoria para elevar o posicionamento de clínicas de estética avançada.
+        </p>
+
+        <div class="footer-socials" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/smartgr.tech/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 12 16.8a4.8 4.8 0 0 1 0-9.6Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2ZM17.1 6.7a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2a9.8 9.8 0 0 0-8.5 14.7L2.4 22l5.4-1.1A9.9 9.9 0 1 0 12 2Zm0 18a8 8 0 0 1-4-1.1l-.4-.2-3.2.7.7-3.1-.2-.5A8 8 0 1 1 12 20Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.9 10.9 0 0 0 4.2 3.7 8.5 8.5 0 0 0 1.4.5 3.4 3.4 0 0 0 1.5.1 2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.3-.2-.5-.3Z"/>
+            </svg>
+          </a>
+
+          <a href="https://www.youtube.com/@smartgrbr" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10 15.3V8.7l5.7 3.3Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Smart GR Tech</h3>
+        <a href="#equipamentos">Equipamentos</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#suporte">Suporte</a>
+        <a href="#faq">FAQ</a>
+        <a href="#area-exclusiva">Área exclusiva</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Grupo Smart GR</h3>
+        <a href="https://smartgr.com.br/" target="_blank" rel="noopener">Site Smart GR</a>
+        <a href="https://smartgr.com.br/blogs/news" target="_blank" rel="noopener">Blog</a>
+        <a href="https://smartgr.com.br/pages/agenda-de-eventos" target="_blank" rel="noopener">Agenda de eventos</a>
+        <a href="https://smartgr.com.br/pages/seja-um-revendedor" target="_blank" rel="noopener">Seja um revendedor</a>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Atendimento</h3>
+        <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
+          WhatsApp comercial
+        </a>
+        <a href="mailto:atendimento@smartgr.com.br">atendimento@smartgr.com.br</a>
+        <p>Segunda a sexta, das 9h às 18h.</p>
+        <a class="footer-contact-btn" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
+          Falar com especialista
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© Smart GR Tech. Todos os direitos reservados.</p>
+      <p>Uma divisão de tecnologia do Grupo Smart GR.</p>
+    </div>
+  </section>
+</footer>
+
+  </main>
+
+  <script>
+//slider carrossel
+  const treatmentsSlider = document.getElementById('treatmentsSlider');
+  const treatmentsPrev = document.querySelector('.treatments-arrow.prev');
+  const treatmentsNext = document.querySelector('.treatments-arrow.next');
+
+  if (treatmentsSlider && treatmentsPrev && treatmentsNext) {
+    function scrollTreatments(direction) {
+      const card = treatmentsSlider.querySelector('.treatment-card');
+
+      if (!card) return;
+
+      const sliderStyles = window.getComputedStyle(treatmentsSlider);
+      const gap = parseFloat(sliderStyles.columnGap || sliderStyles.gap) || 0;
+      const scrollAmount = card.offsetWidth + gap;
+
+      treatmentsSlider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    treatmentsPrev.addEventListener('click', () => scrollTreatments(-1));
+    treatmentsNext.addEventListener('click', () => scrollTreatments(1));
+  }
+
+//banner hero
+  const heroBannerSlider = document.getElementById('heroBannerSlider');
+  const heroPrev = document.querySelector('.hero-control.prev');
+  const heroNext = document.querySelector('.hero-control.next');
+  const heroDots = document.querySelectorAll('.hero-dot');
+
+  if (heroBannerSlider) {
+    const heroSlides = heroBannerSlider.querySelectorAll('.hero-slide');
+    let currentHeroSlide = 0;
+    let heroScrollRaf = null;
+
+    function updateHeroControls() {
+      heroDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentHeroSlide);
+      });
+    }
+
+    function goToHeroSlide(index, behavior = 'smooth') {
+      if (!heroSlides.length) return;
+
+      currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+
+      heroBannerSlider.scrollTo({
+        left: heroBannerSlider.clientWidth * currentHeroSlide,
+        behavior: behavior
+      });
+
+      updateHeroControls();
+    }
+
+    if (heroPrev) {
+      heroPrev.addEventListener('click', () => goToHeroSlide(currentHeroSlide - 1));
+    }
+
+    if (heroNext) {
+      heroNext.addEventListener('click', () => goToHeroSlide(currentHeroSlide + 1));
+    }
+
+    heroDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToHeroSlide(index));
+    });
+
+    heroBannerSlider.addEventListener('scroll', () => {
+      if (heroScrollRaf) {
+        window.cancelAnimationFrame(heroScrollRaf);
+      }
+
+      heroScrollRaf = window.requestAnimationFrame(() => {
+        currentHeroSlide = Math.round(heroBannerSlider.scrollLeft / heroBannerSlider.clientWidth);
+        updateHeroControls();
+      });
+    });
+
+    setInterval(() => {
+      goToHeroSlide(currentHeroSlide + 1);
+    }, 5000);
+
+    window.addEventListener('resize', () => {
+      goToHeroSlide(currentHeroSlide, 'auto');
+    });
+
+    updateHeroControls();
+  }
+
+//menu mobile
+  const mobileMenuButton = document.querySelector('.mobile-menu');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+  if (mobileMenuButton && mobileNav) {
+    mobileMenuButton.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('active');
+
+      mobileMenuButton.classList.toggle('active', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+      mobileMenuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenuButton.innerHTML = isOpen ? '×' : '☰';
+    });
+
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        mobileMenuButton.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.innerHTML = '☰';
+      });
+    });
+  } 
+</script>
+</body>
+</html>

@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Deep Laser | Smart GR Tech</title>
+  <meta name="description" content="Página comercial do Smart Deep Laser: multilaser subdérmico mono e dual wavelength para protocolos dermatológicos, cirúrgicos e vasculares." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --off: #f5f8fb;
+      --ink: #07111f;
+      --text: #314057;
+      --muted: #718198;
+      --line: #dce7f1;
+      --blue: #00b8ef;
+      --blue-2: #0077ff;
+      --blue-dark: #003f88;
+      --navy: #1c2b44;
+      --soft-blue: #e8f4ff;
+      --shadow-soft: 0 16px 38px rgba(8, 23, 42, .08);
+      --shadow-card: 0 22px 58px rgba(8, 23, 42, .10);
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--off);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* NAV - mesma identidade da home */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(220,231,241,.85);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .brand-logo {
+      width: 210px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo img {
+      width: 100%;
+      max-height: 46px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .menu a {
+      color: #5f6f85;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: color .2s ease;
+    }
+
+    .menu a:hover {
+      color: var(--blue-2);
+    }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 19px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-outline {
+      color: var(--ink);
+      background: var(--white);
+      border-color: var(--line);
+      box-shadow: 0 8px 24px rgba(8,23,42,.05);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue-2);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    /* HERO BANNER - mesmo tamanho da home */
+    .product-hero {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: var(--soft-blue);
+      line-height: 0;
+    }
+
+    .product-hero-link {
+      display: block;
+      width: 100%;
+      position: relative;
+    }
+
+    .product-hero-img {
+      width: 100%;
+      height: clamp(260px, 30vw, 430px);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: linear-gradient(135deg, #e8f4ff 0%, #ffffff 100%);
+    }
+
+    .hero-placeholder {
+      width: 100%;
+      height: clamp(260px, 30vw, 430px);
+      background:
+        radial-gradient(circle at 76% 28%, rgba(0,184,239,.16), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #e8f4ff 100%);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      display: none;
+    }
+
+    .image-slot {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 76% 28%, rgba(0,184,239,.16), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #e8f4ff 100%);
+      border: 1px dashed #bdd2e8;
+      min-height: 100%;
+    }
+
+    .image-slot::before,
+    .hero-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(28,43,68,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(28,43,68,.045) 1px, transparent 1px);
+      background-size: 34px 34px;
+      pointer-events: none;
+    }
+
+    .slot-label {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      color: rgba(28,43,68,.55);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      z-index: 2;
+      line-height: 1.3;
+    }
+
+    .section {
+      padding: 56px 0;
+    }
+
+    .section.white {
+      background: #ffffff;
+    }
+
+    .section.off {
+      background: var(--off);
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 12px;
+      color: #383d43;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      color: #181818;
+      letter-spacing: -.055em;
+    }
+
+    .section-head h1,
+    .section-head h2 {
+      font-size: clamp(32px, 5vw, 58px);
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-head p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .hero-summary {
+      padding: 56px 0 42px;
+      background: #ffffff;
+    }
+
+    .hero-summary-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .summary-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      padding: clamp(28px, 4vw, 44px);
+    }
+
+    .summary-main {
+      background: var(--navy);
+      color: #ffffff;
+    }
+
+    .summary-main .kicker,
+    .summary-main h1 {
+      color: #ffffff;
+    }
+
+    .summary-main p {
+      color: rgba(255,255,255,.78);
+      font-size: 16px;
+      line-height: 1.72;
+      max-width: 720px;
+    }
+
+    .summary-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .summary-tag {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.22);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .summary-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .quick-stat {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .quick-stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -.06em;
+      margin-bottom: 8px;
+    }
+
+    .quick-stat span {
+      color: #5f6f85;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow-soft);
+      transition: .22s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(0,184,239,.38);
+    }
+
+    .info-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      background: var(--navy);
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .info-card h3 {
+      font-size: 21px;
+      line-height: 1.12;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      color: #5f6f85;
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .split-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      min-height: 330px;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .split-copy {
+      padding: clamp(28px, 4vw, 44px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .split-copy h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .split-copy p {
+      color: #5f6f85;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.48;
+      font-weight: 500;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #eef7ff;
+      color: var(--blue-dark);
+      border: 1px solid #cfe4f5;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .split-media {
+      min-height: 320px;
+      background: #e8f4ff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .split-media .image-slot {
+      min-height: 100%;
+      height: 100%;
+    }
+
+    .split-image-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .split-image-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .split-image-link.image-slot::before {
+      display: none;
+    }
+
+    .split-image-link img + .slot-label {
+      display: none;
+    }
+
+    .uses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .use-pill {
+      min-height: 82px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .use-pill span {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #eef7ff;
+      color: var(--blue-dark);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .use-pill strong {
+      color: #181818;
+      font-size: 15px;
+      line-height: 1.22;
+      font-weight: 700;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .model-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: clamp(28px, 4vw, 42px);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 7px;
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue));
+    }
+
+    .model-card.dual::before {
+      background: linear-gradient(90deg, var(--blue-dark), var(--blue), #b77ce8);
+    }
+
+    .model-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      border-radius: 999px;
+      background: #f3f8fd;
+      border: 1px solid var(--line);
+      color: var(--blue-dark);
+      padding: 0 12px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .model-card h3 {
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: .98;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .model-card p {
+      color: #5f6f85;
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .wavelength {
+      min-height: 56px;
+      border-radius: 999px;
+      border: 1px solid #bdd2e8;
+      background: #f7fafd;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -.05em;
+      margin-bottom: 20px;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .tip-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      min-height: 170px;
+    }
+
+    .tip-card-image {
+      min-height: 170px;
+      border: 0;
+      border-radius: 0;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tip-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .tip-card-image img + .slot-label {
+      display: none;
+    }
+
+    .tip-card-image.image-slot::before {
+      display: none;
+    }
+
+    .tip-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tip-card h3 {
+      font-size: 20px;
+      line-height: 1.14;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .tip-card p {
+      color: #5f6f85;
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .cta-section {
+      padding: 20px 0 70px;
+      background: var(--off);
+    }
+
+    .cta-box {
+      background: var(--navy);
+      border-radius: 28px;
+      padding: clamp(30px, 5vw, 52px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 28px;
+      box-shadow: 0 18px 44px rgba(28, 43, 68, .16);
+      color: #ffffff;
+    }
+
+    .cta-box span {
+      display: block;
+      margin-bottom: 10px;
+      color: #9ec7ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .cta-box h2 {
+      color: #ffffff;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.02;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 680px;
+      color: rgba(255,255,255,.76);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .cta-actions a {
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+      transition: .2s ease;
+    }
+
+    .cta-actions a.secondary {
+      background: rgba(255,255,255,.12);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,.28);
+    }
+
+    .cta-actions a:hover {
+      transform: translateY(-1px);
+    }
+
+
+
+    /* ANTES E DEPOIS */
+    .before-after-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .before-after-card {
+      min-width: 0;
+      max-width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 14px;
+      box-shadow: var(--shadow-soft);
+      transition: .22s ease;
+      overflow: hidden;
+    }
+
+    .before-after-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(0,184,239,.32);
+    }
+
+    .before-after-pair {
+      width: 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      aspect-ratio: 2.15 / 1;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #edf5fc;
+    }
+
+    .before-after-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #d8e5f0 0%, #f3f8fd 100%);
+    }
+
+    .before-after-image:first-child {
+      border-right: 1px solid rgba(255,255,255,.7);
+    }
+
+    .before-after-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .before-after-image img + .before-after-placeholder {
+      display: none;
+    }
+
+    .before-after-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 10px;
+      text-align: center;
+      color: rgba(28,43,68,.52);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      background: linear-gradient(135deg, #eaf4fc 0%, #f7fbff 100%);
+    }
+
+    .before-after-copy {
+      min-width: 0;
+      padding: 16px 4px 4px;
+      text-align: center;
+    }
+
+    .before-after-copy span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 24px;
+      max-width: 100%;
+      padding: 0 10px;
+      margin-bottom: 9px;
+      border-radius: 999px;
+      background: #eef7ff;
+      color: var(--blue-dark);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .before-after-copy h3 {
+      font-size: 18px;
+      line-height: 1.15;
+      font-weight: 700;
+      margin-bottom: 6px;
+      overflow-wrap: anywhere;
+    }
+
+    .before-after-copy p {
+      color: #5f6f85;
+      font-size: 13px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 1040px) {
+      .before-after-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .before-after-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+      }
+
+      .before-after-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        border-radius: 24px;
+        padding: 10px;
+      }
+
+      .before-after-pair {
+        border-radius: 18px;
+        aspect-ratio: 1.68 / 1;
+      }
+
+      .before-after-placeholder {
+        font-size: 9px;
+        letter-spacing: .08em;
+      }
+
+      .before-after-copy {
+        padding: 14px 6px 4px;
+      }
+
+      .before-after-copy span {
+        max-width: 100%;
+        font-size: 9px;
+        letter-spacing: .08em;
+        padding: 0 9px;
+        white-space: normal;
+        text-align: center;
+      }
+
+      .before-after-copy h3 {
+        font-size: 17px;
+      }
+
+      .before-after-copy p {
+        font-size: 12px;
+        line-height: 1.38;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .nav-inner {
+        grid-template-columns: auto auto;
+      }
+
+      .menu,
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: inline-grid;
+        place-items: center;
+        margin-left: auto;
+      }
+
+      .brand-logo {
+        width: 190px;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        top: 74px;
+        left: 0;
+        right: 0;
+        z-index: 49;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 38px rgba(8, 23, 42, .10);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition: .24s ease;
+      }
+
+      .mobile-nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .mobile-nav a {
+        padding: 18px 24px;
+        color: #5f6f85;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mobile-nav-btn {
+        margin: 18px 24px 24px;
+        min-height: 48px;
+        border-radius: 999px;
+        background: var(--navy);
+        color: #ffffff !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: none !important;
+      }
+
+      .mobile-menu.active {
+        background: var(--navy);
+        color: #ffffff;
+      }
+
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      .hero-summary-grid,
+      .split,
+      .models-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions {
+        justify-content: flex-start;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .uses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .brand-logo {
+        width: 160px;
+        height: 40px;
+      }
+
+      .brand-logo img {
+        max-height: 40px;
+      }
+
+      .mobile-nav {
+        top: 68px;
+      }
+
+      .product-hero-img,
+      .hero-placeholder {
+        height: 440px;
+        object-position: center bottom;
+      }
+
+      .hero-summary {
+        padding: 42px 0 32px;
+      }
+
+      .section {
+        padding: 44px 0;
+      }
+
+      .section-head {
+        margin-bottom: 26px;
+      }
+
+      .section-head h1,
+      .section-head h2 {
+        font-size: clamp(30px, 9vw, 40px);
+      }
+
+      .summary-card {
+        border-radius: 24px;
+        padding: 28px 22px;
+      }
+
+      .cards-grid,
+      .uses-grid,
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tip-card {
+        grid-template-columns: 1fr;
+      }
+
+      .tip-card-image {
+        min-height: 140px;
+        height: 140px;
+      }
+
+      .tip-card-body {
+        padding: 20px 18px;
+      }
+
+      .split-card,
+      .model-card,
+      .cta-box {
+        border-radius: 24px;
+      }
+
+      .split-copy {
+        padding: 28px 22px;
+      }
+
+      .split-media {
+        min-height: 260px;
+      }
+
+      .split-image-link {
+        min-height: 260px;
+      }
+
+      .cta-actions a {
+        width: 100%;
+      }
+    }
+
+
+    /* FOOTER SMART GR TECH */
+        .site-footer {
+      background: #ffffff;
+      color: var(--text);
+    }
+    
+    .footer-newsletter {
+      background: #1c2b44;
+      padding: 46px 0;
+      color: #ffffff;
+    }
+    
+    .footer-newsletter-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 34px;
+    }
+    
+    .footer-newsletter span {
+      display: block;
+      margin-bottom: 10px;
+      color: #9ec7ff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    
+    .footer-newsletter h2 {
+      max-width: 680px;
+      color: #ffffff;
+      font-size: clamp(26px, 3.4vw, 42px);
+      line-height: 1.04;
+      font-weight: 700;
+      letter-spacing: -.055em;
+      margin-bottom: 10px;
+    }
+    
+    .footer-newsletter p {
+      max-width: 640px;
+      color: rgba(255,255,255,.72);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    
+    .footer-form {
+      width: min(100%, 430px);
+      display: flex;
+      gap: 10px;
+      padding: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    
+    .footer-form input {
+      width: 100%;
+      min-height: 46px;
+      border: 0;
+      outline: 0;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1c2b44;
+      font-family: inherit;
+      font-size: 14px;
+    }
+    
+    .footer-form input::placeholder {
+      color: #8a98aa;
+    }
+    
+    .footer-form button {
+      min-height: 46px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 999px;
+      background: #ffffff;
+      color: #1c2b44;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+    
+    .footer-form button:hover {
+      transform: translateY(-1px);
+    }
+    
+    .footer-main {
+      padding: 58px 0 46px;
+      background: #ffffff;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.45fr .75fr .85fr 1fr;
+      gap: 42px;
+    }
+    
+    .footer-brand {
+      max-width: 390px;
+    }
+    
+    .footer-logo {
+      width: 210px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .footer-logo img {
+      width: 100%;
+      max-height: 46px;
+      object-fit: contain;
+      object-position: left center;
+    }
+    
+    .footer-brand p {
+      color: #5f6f85;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    
+    .footer-socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #f3f8fd;
+      border: 1px solid var(--line);
+      color: #1c2b44;
+      transition: .2s ease;
+    }
+    
+    .footer-socials a:hover {
+      background: #1c2b44;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    
+    .footer-socials svg {
+      width: 19px;
+      height: 19px;
+      fill: currentColor;
+    }
+    
+    .footer-col h3 {
+      color: #181818;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    
+    .footer-col a {
+      width: fit-content;
+      display: block;
+      color: #5f6f85;
+      font-size: 14px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+      transition: .2s ease;
+    }
+    
+    .footer-col a:hover {
+      color: var(--blue-2);
+      transform: translateX(2px);
+    }
+    
+    .footer-contact p {
+      color: #718198;
+      font-size: 13px;
+      line-height: 1.55;
+      margin: 4px 0 18px;
+    }
+    
+    .footer-contact-btn {
+      width: fit-content !important;
+      min-height: 44px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: #1c2b44;
+      color: #ffffff !important;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px !important;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    
+    .footer-contact-btn:hover {
+      transform: translateY(-1px) !important;
+    }
+    
+    .footer-bottom {
+      background: #f5f8fb;
+      border-top: 1px solid var(--line);
+      padding: 18px 0;
+    }
+    
+    .footer-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    
+    .footer-bottom p {
+      color: #718198;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    /* AJUSTE NEWSLETTER: disposição tipo card com texto + formulário */
+        .footer-newsletter {
+          background: #ffffff;
+          padding: 24px 0;
+        }
+    
+        .footer-newsletter-inner {
+          background: #1c2b44;
+          border-radius: 28px;
+          padding: 38px 40px;
+          display: grid;
+          grid-template-columns: minmax(260px, .85fr) minmax(420px, 1.15fr);
+          align-items: center;
+          gap: 38px;
+        }
+    
+        .footer-newsletter h2 {
+          max-width: 100%;
+          font-size: clamp(26px, 2.4vw, 34px);
+          margin-bottom: 8px;
+        }
+    
+        .footer-newsletter p {
+          max-width: 100%;
+          font-size: 15px;
+          line-height: 1.45;
+        }
+    
+        .footer-form {
+          width: 100%;
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 12px;
+          padding: 0;
+          border: 0;
+          border-radius: 0;
+          background: transparent;
+        }
+    
+        .footer-form input {
+          min-height: 52px;
+          border: 1px solid rgba(255,255,255,.34);
+        }
+    
+        .footer-form button {
+          min-width: 180px;
+          min-height: 52px;
+          padding: 0 28px;
+        }
+    
+        @media (max-width: 700px) {
+          .footer-newsletter {
+            padding: 16px 0 24px;
+          }
+    
+          .footer-newsletter-inner {
+            grid-template-columns: 1fr;
+            gap: 14px;
+            padding: 26px 16px 22px;
+            border-radius: 8px;
+            text-align: center;
+          }
+    
+          .footer-newsletter span {
+            display: none;
+          }
+    
+          .footer-newsletter h2 {
+            font-size: 20px;
+            line-height: 1.12;
+            letter-spacing: -.04em;
+            margin-bottom: 6px;
+          }
+    
+          .footer-newsletter p {
+            font-size: 14px;
+            line-height: 1.35;
+          }
+    
+          .footer-form {
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 8px;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+          }
+    
+          .footer-form input {
+            width: 100%;
+            min-height: 40px;
+            padding: 0 12px;
+            font-size: 12px;
+          }
+    
+          .footer-form button {
+            width: auto;
+            min-width: 112px;
+            min-height: 40px;
+            padding: 0 16px;
+            font-size: 12px;
+          }
+        }
+
+
+
+    /* CORREÇÃO GLOBAL: remove qualquer rolagem horizontal no mobile */
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+    }
+
+    main,
+    header,
+    footer,
+    section,
+    .nav-bar,
+    .site-footer,
+    .mobile-nav {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    .container,
+    .nav-inner,
+    .hero-summary-grid,
+    .summary-card,
+    .summary-main,
+    .summary-side,
+    .summary-tags,
+    .split,
+    .split-card,
+    .cards-grid,
+    .uses-grid,
+    .models-grid,
+    .tips-grid,
+    .before-after-grid,
+    .before-after-card,
+    .before-after-pair,
+    .footer-newsletter-inner,
+    .footer-grid,
+    .footer-form,
+    .cta-box,
+    .cta-actions {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .footer-form input,
+    .footer-form button,
+    .cta-actions a,
+    .btn,
+    .summary-tag,
+    .wavelength {
+      min-width: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    a,
+    span,
+    strong,
+    li {
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 700px) {
+      main,
+      header,
+      footer,
+      section,
+      .nav-bar,
+      .site-footer {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .summary-main h1,
+      .section-head h1,
+      .section-head h2,
+      .split-copy h2,
+      .model-card h3,
+      .cta-box h2 {
+        overflow-wrap: anywhere;
+      }
+    }
+
+  
+    /* AJUSTE PONTEIRAS: cards sem ícones */
+    #ponteiras .cards-grid .info-card {
+      min-height: 188px;
+      padding: 30px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #ponteiras .cards-grid .info-card h3 {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 700px) {
+      #ponteiras .cards-grid .info-card {
+        min-height: auto;
+        padding: 24px 20px;
+      }
+    }
+
+</style>
+</head>
+<body>
+    <!-- NAV -->
+  <header class="nav-bar">
+    <div class="container nav-inner">
+      <a class="brand-logo" href="HOME PAGE - LP TECH.html" aria-label="Smart GR Tech">
+        <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech" />
+      </a>
+
+      <nav class="menu" aria-label="Navegação principal">
+        <a href="HOME PAGE - LP TECH.html#top">Home</a>
+        <a href="HOME PAGE - LP TECH.html#equipamentos">Produtos</a>
+        <a href="HOME PAGE - LP TECH.html#suporte">Suporte</a>
+        <a href="HOME PAGE - LP TECH.html#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!--  <a class="btn btn-outline" href="#area-exclusiva">Área exclusiva</a>-->
+        <a class="btn btn-primary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Falar com especialista</a>
+        <button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+    <a href="HOME PAGE - LP TECH.html#top">Home</a>
+        <a href="HOME PAGE - LP TECH.html#equipamentos">Produtos</a>
+        <a href="HOME PAGE - LP TECH.html#suporte">Suporte</a>
+        <a href="HOME PAGE - LP TECH.html#faq">FAQ</a>
+
+    <a
+      class="mobile-nav-btn"
+      href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech"
+      target="_blank"
+      rel="noopener"
+    >
+      Falar com especialista
+    </a>
+  </nav>
+
+  <main id="top">
+    <!-- BANNER PRINCIPAL -->
+    <section class="product-hero" aria-label="Banner Smart Deep Laser">
+      <a class="product-hero-link" href="#resumo" aria-label="Conhecer Smart Deep Laser">
+        <!-- Troque este picture quando subir os banners finais -->
+        <picture>
+          <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Mobile.png" />
+          <img class="product-hero-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Desktop.png" alt="Smart Deep Laser" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='block';" />
+        </picture>
+        <div class="hero-placeholder">
+          <span class="slot-label">Espaço para banner Smart Deep Laser</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- RESUMO -->
+    <section class="hero-summary" id="resumo">
+      <div class="container hero-summary-grid">
+        <article class="summary-card summary-main">
+          <span class="kicker">Smart Deep Laser</span>
+          <h1>Multilaser subdérmico mono e dual wavelength</h1>
+          <p>
+            Tecnologia de laser subdérmico desenvolvida para protocolos dermatológicos, cirúrgicos e vasculares, com atuação nas camadas subdérmicas, estímulo de retração tecidual e suporte à formação de colágeno.
+          </p>
+          <div class="summary-tags">
+            <span class="summary-tag">Dual 980 + 1470 nm</span>
+            <span class="summary-tag">Dermatológico</span>
+            <span class="summary-tag">Cirúrgico</span>
+            <span class="summary-tag">Vascular</span>
+            <span class="summary-tag">Íntimo</span>
+          </div>
+        </article>
+
+        <div class="summary-side">
+          <article class="quick-stat">
+            <strong>980 nm</strong>
+            <span>Indicado para vascular, auxilia na coagulação controlada, redução de hematomas e controle de sangramento.</span>
+          </article>
+          <article class="quick-stat">
+            <strong>1470 nm</strong>
+            <span>Energia concentrada para retração da pele, estímulo de colágeno, remodelação tecidual e lipólise mais controlada.</span>
+          </article>
+          <article class="quick-stat">
+            <strong>980 + 1470 nm</strong>
+            <span>Ação sinérgica para aquecimento tecidual, coagulação, controle de sangramento e redução de hematomas.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ANTES E DEPOIS -->
+    <section class="section white" id="resultados">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Resultados</span>
+          <h2>Antes e depois dos protocolos Smart Deep Laser</h2>
+         <!-- <p>Espaço para reunir registros visuais dos protocolos e identificar o aplicador, região ou estratégia utilizada em cada caso.</p> -->
+        </div>
+
+        <div class="before-after-grid">
+          <article class="before-after-card">
+            <div class="before-after-pair">
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/antes+1Deep+Laser.png" alt="Antes do protocolo Smart Deep Laser 01" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Antes</span>
+              </div>
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/depois+1Deep+Laser.png" alt="Depois do protocolo Smart Deep Laser 01" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Depois</span>
+              </div>
+            </div>
+            <div class="before-after-copy">
+              <span>após 30 dias</span>
+              <h3>Papada</h3>
+            </div>
+          </article>
+
+          <article class="before-after-card">
+            <div class="before-after-pair">
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/antes+2Deep+Laser.png" alt="Antes do protocolo Smart Deep Laser 02" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Antes</span>
+              </div>
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/depois+2Deep+Laser.png" alt="Depois do protocolo Smart Deep Laser 02" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Depois</span>
+              </div>
+            </div>
+            <div class="before-after-copy">
+              <span>pós imediato</span>
+              <h3>Tratamento de Lipo</h3>
+            </div>
+          </article>
+
+          <article class="before-after-card">
+            <div class="before-after-pair">
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/antes+3Deep+Laser.png" alt="Antes do protocolo Smart Deep Laser 03" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Antes</span>
+              </div>
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/depois+3Deep+Laser.png" alt="Depois do protocolo Smart Deep Laser 03" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Depois</span>
+              </div>
+            </div>
+            <div class="before-after-copy">
+              <span>após 30 dias</span>
+              <h3>Tratamento de Lipo</h3>
+            </div>
+          </article>
+
+          <article class="before-after-card">
+            <div class="before-after-pair">
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/antes+4Deep+Laser.png" alt="Antes do protocolo Smart Deep Laser 04" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Antes</span>
+              </div>
+              <div class="before-after-image">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/resultados/depois+4Deep+Laser.png" alt="Depois do protocolo Smart Deep Laser 04" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="before-after-placeholder">Depois</span>
+              </div>
+            </div>
+            <div class="before-after-copy">
+              <span>Pós imediato</span>
+              <h3>Tratamento de Lipo</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- O QUE É -->
+    <section class="section off" id="tecnologia">
+      <div class="container split">
+        <article class="split-card">
+          <div class="split-copy">
+            <span class="kicker">O que é?</span>
+            <h2>Tecnologia Smart Deep Laser</h2>
+            <p>
+              O Smart Deep Laser é uma plataforma de laser subdérmico com tecnologia Dual Wavelength, pensada para procedimentos que exigem precisão, segurança e performance em diferentes indicações clínicas.
+            </p>
+            <ul class="feature-list">
+              <li>Atuação nas camadas subdérmicas com aquecimento seletivo.</li>
+              <li>Auxilia na destruição seletiva de células de gordura.</li>
+              <li>Estimula retração da pele e formação de colágeno.</li>
+              <li>Também oferece aplicação em tratamentos vasculares.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="split-card">
+          <div class="split-media">
+            <a class="split-image-link image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Mobile.png" target="_blank" rel="noopener" aria-label="Abrir imagem do equipamento ou aplicação">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Mobile.png" alt="Smart Deep Laser - equipamento ou aplicação" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Espaço para imagem do equipamento ou aplicação</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- APLICAÇÕES -->
+    <section class="section white" id="aplicacoes">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Para que serve?</span>
+          <h2>Protocolos com foco em contorno, retração e precisão clínica</h2>
+          <p>Uma tecnologia para ampliar possibilidades em protocolos faciais, corporais e vasculares, com abordagem consultiva e personalizável.</p>
+        </div>
+        <div class="uses-grid">
+          <div class="use-pill"><span>01</span><strong>Lipolaser</strong></div>
+          <div class="use-pill"><span>02</span><strong>Remodelação corporal</strong></div>
+          <div class="use-pill"><span>03</span><strong>Skin tightening</strong></div>
+          <div class="use-pill"><span>04</span><strong>Tratamento da flacidez</strong></div>
+          <div class="use-pill"><span>05</span><strong>Rejuvenescimento facial e corporal</strong></div>
+          <div class="use-pill"><span>06</span><strong>Tratamento de cicatrizes e estrias</strong></div>
+          <div class="use-pill"><span>07</span><strong>Ajuste do contorno facial e corporal</strong></div>
+          <div class="use-pill"><span>08</span><strong>Correção de hiperidrose</strong></div>
+          <div class="use-pill"><span>09</span><strong>Tratamento vascular</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section off">
+      <div class="container split">
+        <article class="split-card">
+          <div class="split-media">
+            <a class="split-image-link image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/camadas+de+pele+deep+laser.png" target="_blank" rel="noopener" aria-label="Abrir infográfico de camadas da pele">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/camadas+de+pele+deep+laser.png" alt="Infográfico Smart Deep Laser - epiderme, derme, gordura e músculo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Espaço para infográfico: epiderme, derme, gordura e músculo</span>
+            </a>
+          </div>
+        </article>
+        <article class="split-card">
+          <div class="split-copy">
+            <span class="kicker">Como funciona?</span>
+            <h2>Fototermólise seletiva e estímulo de colágeno</h2>
+            <p>A energia emitida pelo laser aquece as células de forma seletiva, promovendo ação sobre gordura localizada e, simultaneamente, estímulo à produção de colágeno para melhora da firmeza e elasticidade da pele.</p>
+            <ul class="feature-list">
+              <li>Auxilia na cauterização de vasos e controle de sangramento.</li>
+              <li>Favorece retração tecidual e remodelação de contorno.</li>
+              <li>Permite estratégias com uso isolado ou simultâneo dos comprimentos de onda.</li>
+              <li>Redução de gordura localizada.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MODELOS -->
+    <section class="section white">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Tecnologia avançada</span>
+          <h2>Mono ou Dual Wavelength</h2>
+          <p>Duas possibilidades para construir protocolos com alta precisão, melhor distribuição térmica e menor dano térmico.</p>
+        </div>
+        <div class="models-grid">
+          <article class="model-card">
+            <span class="model-label">Modelo Mono</span>
+            <div class="wavelength">1470 nm</div>
+            <h3>Energia concentrada</h3>
+            <p>Indicado para retração da pele, estímulo de colágeno, remodelação tecidual e lipólise mais controlada.</p>
+            <ul class="feature-list"><li>Atuação concentrada em tecido adiposo.</li><li>Suporte a protocolos de flacidez e contorno.</li></ul>
+          </article>
+          <article class="model-card dual">
+            <span class="model-label">Modelo Dual</span>
+            <div class="wavelength">980 nm + 1470 nm</div>
+            <h3>Energia sinérgica</h3>
+            <p>Combina energia concentrada e ação vascular, potencializando o aquecimento tecidual e auxiliando na coagulação, controle de sangramento e redução de hematomas.</p>
+            <ul class="feature-list"><li>Uso isolado ou simultâneo dos comprimentos de onda.</li><li>Estratégia para protocolos subdérmicos, vasculares e íntimos.</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VANTAGENS -->
+    <section class="section off">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Vantagens</span><h2>Precisão, segurança e performance para a rotina clínica</h2></div>
+        <div class="cards-grid">
+          <article class="info-card"><div class="info-icon">01</div><h3>Controle vascular</h3><p>Auxilia na cauterização de vasos e evita sangramentos excessivos devido à afinidade com a hemoglobina.</p></article>
+          <article class="info-card"><div class="info-icon">02</div><h3>Contorno facial e corporal</h3><p>Indicado para aprimoramento de contorno, remodelação corporal e protocolos de retração tecidual.</p></article>
+          <article class="info-card"><div class="info-icon">03</div><h3>Absorção seletiva</h3><p>Energia com absorção seletiva pelo tecido adiposo, auxiliando na redução de gordura localizada.</p></article>
+          <article class="info-card"><div class="info-icon">04</div><h3>Flacidez tissular</h3><p>Estratégia eficaz para controle da flacidez tissular e melhora progressiva da qualidade da pele.</p></article>
+          <article class="info-card"><div class="info-icon">05</div><h3>Recuperação acelerada</h3><p>Procedimento rápido, com recuperação acelerada e sem necessidade de centro cirúrgico.</p></article>
+          <article class="info-card"><div class="info-icon">06</div><h3>Terapias vasculares</h3><p>Possibilita abordagens vasculares com maior precisão, controle e versatilidade de aplicação.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONDE USAR -->
+    <section class="section white">
+      <div class="container">
+        <div class="section-head"><span class="kicker">Onde usar?</span><h2>Versatilidade para diferentes áreas anatômicas.</h2></div>
+        <div class="tips-grid">
+          <article class="tip-card">
+            <a class="tip-card-image image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/palpebras+deep+laser.jpg" target="_blank" rel="noopener" aria-label="Abrir imagem pálpebra">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/palpebras+deep+laser.jpg" alt="Pálpebra superior e inferior" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Imagem pálpebra</span>
+            </a>
+            <div class="tip-card-body">
+              <h3>Pálpebra superior e inferior</h3>
+              <p>Aplicações em áreas delicadas que exigem precisão e controle.</p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <a class="tip-card-image image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/papada+deep+laser.jpg" target="_blank" rel="noopener" aria-label="Abrir imagem papada e pescoço">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/papada+deep+laser.jpg" alt="Papada e pescoço" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Imagem papada e pescoço</span>
+            </a>
+            <div class="tip-card-body">
+              <h3>Papada e pescoço</h3>
+              <p>Protocolos voltados ao contorno e retração tecidual.</p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <a class="tip-card-image image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/flancos+deep+laser.png" target="_blank" rel="noopener" aria-label="Abrir imagem abdômen e costas">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/flancos+deep+laser.png" alt="Abdômen e costas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Imagem abdômen e costas</span>
+            </a>
+            <div class="tip-card-body">
+              <h3>Abdômen e costas</h3>
+              <p>Estratégias corporais para gordura localizada, remodelação e flacidez.</p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <a class="tip-card-image image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/bra%C3%A7o+deep+laser.png" target="_blank" rel="noopener" aria-label="Abrir imagem braço e coxa">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/bra%C3%A7o+deep+laser.png" alt="Interno de braço e coxa" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Imagem braço e coxa</span>
+            </a>
+            <div class="tip-card-body">
+              <h3>Interno de braço e coxa</h3>
+              <p>Áreas corporais com demanda por sustentação e qualidade tecidual.</p>
+            </div>
+          </article>
+          <article class="tip-card">
+            <a class="tip-card-image image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/bra%C3%A7o+deep+laser.png" target="_blank" rel="noopener" aria-label="Abrir imagem braço e coxa">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/varizes.jpg" alt="Interno de braço e coxa" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Imagem braço e coxa</span>
+            </a>
+            <div class="tip-card-body">
+              <h3>Vascular</h3>
+              <p>Protocolos voltados ao cuidado vascular, auxiliando na aparência de hematomas e na qualidade tecidual.</p>
+            </div>
+          </article>
+          <article class="tip-card">
+            <a class="tip-card-image image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/regi%C3%B5es/bra%C3%A7o+deep+laser.png" target="_blank" rel="noopener" aria-label="Abrir imagem braço e coxa">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/intimo.jpg" alt="Interno de braço e coxa" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+              <span class="slot-label">Imagem braço e coxa</span>
+            </a>
+            <div class="tip-card-body">
+              <h3>Íntimo</h3>
+              <p>Aplicações em áreas delicadas, com foco em uniformização, firmeza e revitalização da pele.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PONTEIRAS -->
+    <section class="section off" id="ponteiras">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Ponteiras</span>
+          <h2>Aplicadores e acessórios para diferentes estratégias clínicas</h2>
+          <p>A combinação de aplicadores e modos de emissão permite adaptar protocolos às necessidades de cada região e indicação clínica.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="info-card"><h3>Smart Deep Canula</h3><p>Microcânula para procedimentos estéticos com laser subdérmico. Disponível em 18G / 60 mm, 100 mm, 150 mm e 200 mm.</p></article>
+          <article class="info-card"><h3>Espaçador vascular</h3><p>19 mm para vasos mais profundos e telangiectasias irregulares. 30 mm para tratamentos vasculares superficiais.</p></article>
+          <article class="info-card"><h3>Espalhadores íntimos</h3><p>Espalhador 360º e 90º para uso com lente focal vaginal, ampliando possibilidades de aplicação.</p></article>
+        </div>
+        <div class="split" style="margin-top: 22px;">
+          <article class="split-card">
+            <div class="split-media">
+              <a class="split-image-link image-slot" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Aplicadores+Deep+Laser.png" target="_blank" rel="noopener" aria-label="Abrir imagem das ponteiras e cânulas">
+                <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Aplicadores+Deep+Laser.png" alt="Ponteiras e cânulas Smart Deep Laser" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <span class="slot-label">Espaço para imagem das ponteiras / cânulas</span>
+              </a>
+            </div>
+          </article>
+          <article class="split-card">
+            <div class="split-copy">
+              <span class="kicker">Benefícios do espaçador vascular</span>
+              <h2>Mais controle para aplicações vasculares.</h2>
+              <ul class="feature-list"><li>Acesso anatômico.</li><li>Visualização direta.</li><li>Melhor visão do vaso.</li><li>Não limita distância.</li><li>Maior liberdade angular.</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span>Atendimento consultivo</span>
+            <h2>Quer entender como o Smart Deep Laser se encaixa na sua clínica?</h2>
+            <p>Fale com um especialista Smart GR Tech para receber uma orientação sobre tecnologia, aplicações, possibilidades clínicas e posicionamento comercial.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Falar com especialista</a>
+            <a class="secondary" href="index.html#equipamentos">Ver outros equipamentos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <!-- FOOTER SMART GR TECH -->
+<footer class="site-footer">
+  <section class="footer-main">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="#top" aria-label="Smart GR Tech">
+          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech">
+        </a>
+
+        <p>
+          A divisão de equipamentos eletromédicos da Smart GR. Tecnologia, suporte e curadoria para elevar o posicionamento de clínicas de estética avançada.
+        </p>
+
+        <div class="footer-socials" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/smartgr.oficial/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 12 16.8a4.8 4.8 0 0 1 0-9.6Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2ZM17.1 6.7a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
+            </svg>
+          </a>
+
+          <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2a9.8 9.8 0 0 0-8.5 14.7L2.4 22l5.4-1.1A9.9 9.9 0 1 0 12 2Zm0 18a8 8 0 0 1-4-1.1l-.4-.2-3.2.7.7-3.1-.2-.5A8 8 0 1 1 12 20Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.9 10.9 0 0 0 4.2 3.7 8.5 8.5 0 0 0 1.4.5 3.4 3.4 0 0 0 1.5.1 2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.3-.2-.5-.3Z"/>
+            </svg>
+          </a>
+
+          <a href="https://www.youtube.com/@SmartGR" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10 15.3V8.7l5.7 3.3Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Smart GR Tech</h3>
+        <a href="#equipamentos">Equipamentos</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#suporte">Suporte</a>
+        <a href="#faq">FAQ</a>
+        <a href="#area-exclusiva">Área exclusiva</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Grupo Smart GR</h3>
+        <a href="https://smartgr.com.br/" target="_blank" rel="noopener">Site Smart GR</a>
+        <a href="https://smartgr.com.br/blogs/news" target="_blank" rel="noopener">Blog</a>
+        <a href="https://smartgr.com.br/pages/agenda-de-eventos" target="_blank" rel="noopener">Agenda de eventos</a>
+        <a href="https://smartgr.com.br/pages/seja-um-revendedor" target="_blank" rel="noopener">Seja um revendedor</a>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Atendimento</h3>
+        <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
+          WhatsApp comercial
+        </a>
+        <a href="mailto:atendimento@smartgr.com.br">atendimento@smartgr.com.br</a>
+        <p>Segunda a sexta, das 9h às 18h.</p>
+        <a class="footer-contact-btn" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
+          Falar com especialista
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>© Smart GR Tech. Todos os direitos reservados.</p>
+      <p>Uma divisão de tecnologia do Grupo Smart GR.</p>
+    </div>
+  </section>
+</footer>
+
+  <script>
+    const mobileMenuButton = document.querySelector('.mobile-menu');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+    if (mobileMenuButton && mobileNav) {
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenuButton.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        const isOpen = mobileNav.classList.contains('active');
+        mobileMenuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        mobileMenuButton.innerHTML = isOpen ? '×' : '☰';
+      });
+
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenuButton.classList.remove('active');
+          mobileNav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          mobileMenuButton.innerHTML = '☰';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
