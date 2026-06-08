@@ -31,16 +31,18 @@
 }
 
 .footer-newsletter {
-  background: #1c2b44;
-  padding: 46px 0;
-  color: #ffffff;
+  background: #ffffff;
+  padding: 24px 0;
 }
 
 .footer-newsletter-inner {
+  background: #1c2b44;
+  border-radius: 28px;
+  padding: 38px 40px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(260px, .85fr) minmax(420px, 1.15fr);
   align-items: center;
-  gap: 34px;
+  gap: 38px;
 }
 
 .footer-newsletter span {
@@ -54,36 +56,38 @@
 }
 
 .footer-newsletter h2 {
-  max-width: 680px;
+  max-width: 100%;
   color: #ffffff;
-  font-size: clamp(26px, 3.4vw, 42px);
+  font-size: clamp(26px, 2.4vw, 34px);
   line-height: 1.04;
   font-weight: 700;
   letter-spacing: -.055em;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-newsletter p {
-  max-width: 640px;
+  max-width: 100%;
   color: rgba(255,255,255,.72);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
 .footer-form {
-  width: min(100%, 430px);
-  display: flex;
-  gap: 10px;
-  padding: 8px;
-  border-radius: 999px;
-  background: rgba(255,255,255,.10);
-  border: 1px solid rgba(255,255,255,.18);
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .footer-form input {
   width: 100%;
-  min-height: 46px;
-  border: 0;
+  min-height: 52px;
+  border: 1px solid rgba(255,255,255,.34);
   outline: 0;
   padding: 0 18px;
   border-radius: 999px;
@@ -98,8 +102,9 @@
 }
 
 .footer-form button {
-  min-height: 46px;
-  padding: 0 24px;
+  min-width: 180px;
+  min-height: 52px;
+  padding: 0 28px;
   border: 0;
   border-radius: 999px;
   background: #ffffff;
@@ -255,7 +260,7 @@
 .treatments-section {
   padding: 56px 0 64px;
   background: #ffffff;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .treatments-header {
@@ -282,6 +287,9 @@
 
 .treatments-slider-wrap {
   position: relative;
+  padding: 0 28px;
+  margin: 0 -28px;
+  overflow: visible;
 }
 
 .treatments-slider {
@@ -291,7 +299,9 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 0 2px 10px;
+  padding: 8px 28px 26px;
+  margin: -8px -28px -26px;
+  scroll-padding-left: 28px;
 }
 
 .treatments-slider::-webkit-scrollbar {
@@ -306,7 +316,8 @@
 
 .treatment-card img {
   width: 100%;
-  aspect-ratio: 1 / 1.28;
+  height: 260px;
+  aspect-ratio: auto;
   object-fit: cover;
   object-position: center;
   border-radius: 14px;
@@ -348,11 +359,11 @@
 }
 
 .treatments-arrow.prev {
-  left: -18px;
+  left: 4px;
 }
 
 .treatments-arrow.next {
-  right: -18px;
+  right: 4px;
 }
 
 
@@ -450,15 +461,40 @@
   margin-top: 24px;
   background: #1c2b44;
   border-radius: 28px;
-  padding: 30px 34px;
+  padding: 34px 38px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
   align-items: center;
-  gap: 28px;
+  gap: 34px;
   box-shadow: 0 18px 44px rgba(28, 43, 68, .16);
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
 }
 
-.support-cta strong {
+.support-cta::before {
+  content: "";
+  position: absolute;
+  inset: auto -80px -120px auto;
+  width: 280px;
+  height: 280px;
+  border-radius: 999px;
+  background: rgba(158, 199, 255, .18);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.support-cta-copy span {
+  display: block;
+  margin-bottom: 10px;
+  color: #9ec7ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.support-cta-copy strong {
   display: block;
   color: #ffffff;
   font-size: 24px;
@@ -466,15 +502,20 @@
   font-weight: 700;
   letter-spacing: -.04em;
   margin-bottom: 8px;
+  max-width: 760px;
 }
 
-.support-cta p {
+.support-cta-copy p {
   color: rgba(255,255,255,.72);
   font-size: 15px;
   line-height: 1.55;
+  max-width: 620px;
+  margin-top: 10px;
 }
 
-.support-cta a {
+.support-cta-copy a {
+  width: fit-content;
+  margin-top: 24px;
   min-height: 52px;
   padding: 0 28px;
   border-radius: 999px;
@@ -489,8 +530,76 @@
   transition: .2s ease;
 }
 
-.support-cta a:hover {
+.support-cta-copy a:hover {
   transform: translateY(-1px);
+}
+
+.support-cta-panel {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.support-panel-tag {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.support-panel-list {
+  display: grid;
+  gap: 10px;
+}
+
+.support-panel-item {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.support-panel-item > span {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1c2b44;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.support-panel-item b {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 3px;
+}
+
+.support-panel-item small {
+  display: block;
+  color: rgba(255,255,255,.68);
+  font-size: 12px;
+  line-height: 1.35;
 }
 
     .seller-cta {
@@ -1068,31 +1177,57 @@
     @media (max-width: 700px) {
 
       .footer-newsletter {
-    padding: 38px 0;
+    padding: 16px 0 24px;
   }
 
   .footer-newsletter-inner {
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 26px 16px 22px;
+    border-radius: 8px;
     text-align: center;
   }
 
+  .footer-newsletter span {
+    display: none;
+  }
+
   .footer-newsletter h2 {
-    font-size: clamp(25px, 8vw, 34px);
+    font-size: 20px;
+    line-height: 1.12;
+    letter-spacing: -.04em;
+    margin-bottom: 6px;
   }
 
   .footer-newsletter p {
     font-size: 14px;
+    line-height: 1.35;
   }
 
   .footer-form {
-    flex-direction: column;
-    border-radius: 24px;
-    padding: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
-  .footer-form input,
-  .footer-form button {
+  .footer-form input {
     width: 100%;
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .footer-form button {
+    width: auto;
+    min-width: 112px;
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 12px;
   }
 
   .footer-main {
@@ -1289,22 +1424,47 @@
     gap: 22px;
   }
 
-  .support-cta strong {
+  .support-cta-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .support-cta-copy a {
+    width: 100%;
+    max-width: none;
+    margin-top: 20px;
+  }
+
+  .support-cta-copy strong {
     font-size: 23px;
   }
 
-  .support-cta a {
-    width: 100%;
+  .support-cta-copy p {
+    font-size: 14px;
   }
 
-    }
+  .support-cta-panel {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: left;
+    border-radius: 20px;
+    padding: 14px;
+  }
 
-    /* AJUSTE TRATAMENTOS: altura menor das imagens e correção mobile */
-    .treatment-card img {
-      height: 260px;
-      aspect-ratio: auto;
-      object-fit: cover;
-      object-position: center;
+  .support-panel-item {
+    grid-template-columns: 34px 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .support-panel-item > span {
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
+  }
+
     }
 
     @media (max-width: 1040px) {
@@ -1337,37 +1497,33 @@
       }
 
       .treatments-slider {
-        gap: 14px;
-        padding: 0 0 8px;
+        gap: 12px;
+        padding: 8px 18px 22px;
+        margin: -8px -18px -22px;
+        scroll-padding-left: 18px;
+      }
+
+      .treatments-slider-wrap {
+        padding: 0 18px;
+        margin: 0 -18px;
       }
 
       .treatment-card {
-        flex: 0 0 76%;
+        flex: 0 0 calc((100% - 12px) / 2);
       }
 
       .treatment-card img {
-        height: 210px;
+        height: clamp(145px, 42vw, 180px);
         border-radius: 14px;
         margin-bottom: 10px;
       }
 
       .treatment-card h3 {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .treatments-arrow {
-        width: 38px;
-        height: 38px;
-        font-size: 28px;
-        top: 50%;
-      }
-
-      .treatments-arrow.prev {
-        left: 6px;
-      }
-
-      .treatments-arrow.next {
-        right: 6px;
+        display: none;
       }
     }
 
@@ -1446,83 +1602,6 @@
         top: 68px;
       }
     }
-
-
-    /* AJUSTE CARROSSEL TRATAMENTOS: evita corte lateral e preserva sombra */
-    .treatments-section {
-      overflow: visible;
-    }
-
-    .treatments-slider-wrap {
-      padding: 0 28px;
-      margin: 0 -28px;
-      overflow: visible;
-    }
-
-    .treatments-slider {
-      padding: 8px 28px 26px;
-      margin: -8px -28px -26px;
-      scroll-padding-left: 28px;
-    }
-
-    .treatments-arrow.prev {
-      left: 4px;
-    }
-
-    .treatments-arrow.next {
-      right: 4px;
-    }
-
-    @media (max-width: 700px) {
-      .treatments-slider-wrap {
-        padding: 0 18px;
-        margin: 0 -18px;
-      }
-
-      .treatments-slider {
-        padding: 8px 18px 22px;
-        margin: -8px -18px -22px;
-        scroll-padding-left: 18px;
-      }
-
-      .treatments-arrow.prev {
-        left: 6px;
-      }
-
-      .treatments-arrow.next {
-        right: 6px;
-      }
-    }
-
-
-  
-    /* AJUSTE MOBILE: remove setas do carrossel de tratamentos apenas no mobile */
-    @media (max-width: 700px) {
-      .treatments-arrow {
-        display: none;
-      }
-    }
-
-
-    /* AJUSTE MOBILE: tratamentos em 2 colunas visíveis */
-    @media (max-width: 700px) {
-      .treatment-card {
-        flex: 0 0 calc((100% - 12px) / 2);
-      }
-
-      .treatments-slider {
-        gap: 12px;
-      }
-
-      .treatment-card img {
-        height: clamp(145px, 42vw, 180px);
-      }
-
-      .treatment-card h3 {
-        font-size: 14px;
-      }
-    }
-
 
     /* CONTROLES CLICÁVEIS DO BANNER */
     .hero-slider-controls {
@@ -1623,300 +1702,6 @@
       }
     }
 
-
-    /* AJUSTE NEWSLETTER: disposição tipo card com texto + formulário */
-    .footer-newsletter {
-      background: #ffffff;
-      padding: 24px 0;
-    }
-
-    .footer-newsletter-inner {
-      background: #1c2b44;
-      border-radius: 28px;
-      padding: 38px 40px;
-      display: grid;
-      grid-template-columns: minmax(260px, .85fr) minmax(420px, 1.15fr);
-      align-items: center;
-      gap: 38px;
-    }
-
-    .footer-newsletter h2 {
-      max-width: 100%;
-      font-size: clamp(26px, 2.4vw, 34px);
-      margin-bottom: 8px;
-    }
-
-    .footer-newsletter p {
-      max-width: 100%;
-      font-size: 15px;
-      line-height: 1.45;
-    }
-
-    .footer-form {
-      width: 100%;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 12px;
-      padding: 0;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-
-    .footer-form input {
-      min-height: 52px;
-      border: 1px solid rgba(255,255,255,.34);
-    }
-
-    .footer-form button {
-      min-width: 180px;
-      min-height: 52px;
-      padding: 0 28px;
-    }
-
-    @media (max-width: 700px) {
-      .footer-newsletter {
-        padding: 16px 0 24px;
-      }
-
-      .footer-newsletter-inner {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 26px 16px 22px;
-        border-radius: 8px;
-        text-align: center;
-      }
-
-      .footer-newsletter span {
-        display: none;
-      }
-
-      .footer-newsletter h2 {
-        font-size: 20px;
-        line-height: 1.12;
-        letter-spacing: -.04em;
-        margin-bottom: 6px;
-      }
-
-      .footer-newsletter p {
-        font-size: 14px;
-        line-height: 1.35;
-      }
-
-      .footer-form {
-        width: 100%;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 8px;
-        padding: 0;
-        border: 0;
-        border-radius: 0;
-        background: transparent;
-      }
-
-      .footer-form input {
-        width: 100%;
-        min-height: 40px;
-        padding: 0 12px;
-        font-size: 12px;
-      }
-
-      .footer-form button {
-        width: auto;
-        min-width: 112px;
-        min-height: 40px;
-        padding: 0 16px;
-        font-size: 12px;
-      }
-    }
-
-
-
-    /* AJUSTE CTA SUPORTE: diagnóstico consultivo */
-    .support-cta {
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
-      align-items: center;
-      gap: 34px;
-      padding: 34px 38px;
-      overflow: hidden;
-      position: relative;
-      isolation: isolate;
-    }
-
-    .support-cta::before {
-      content: "";
-      position: absolute;
-      inset: auto -80px -120px auto;
-      width: 280px;
-      height: 280px;
-      border-radius: 999px;
-      background: rgba(158, 199, 255, .18);
-      filter: blur(4px);
-      z-index: -1;
-    }
-
-    .support-cta-copy span {
-      display: block;
-      margin-bottom: 10px;
-      color: #9ec7ff;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .support-cta-copy strong {
-      display: block;
-      max-width: 760px;
-    }
-
-    .support-cta-copy p {
-      max-width: 620px;
-      margin-top: 10px;
-    }
-
-    .support-cta-copy a {
-      width: fit-content;
-      margin-top: 24px;
-    }
-
-    .support-cta-panel {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 24px;
-      padding: 18px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-    }
-
-    .support-panel-tag {
-      display: inline-flex;
-      min-height: 28px;
-      align-items: center;
-      justify-content: center;
-      padding: 0 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.12);
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .support-panel-list {
-      display: grid;
-      gap: 10px;
-    }
-
-    .support-panel-item {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    .support-panel-item > span {
-      width: 38px;
-      height: 38px;
-      border-radius: 999px;
-      background: #ffffff;
-      color: #1c2b44;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .support-panel-item b {
-      display: block;
-      color: #ffffff;
-      font-size: 14px;
-      line-height: 1.2;
-      margin-bottom: 3px;
-    }
-
-    .support-panel-item small {
-      display: block;
-      color: rgba(255,255,255,.68);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-
-    @media (max-width: 1040px) {
-      .support-cta {
-        grid-template-columns: 1fr;
-        padding: 32px 28px;
-        text-align: center;
-      }
-
-      .support-cta-copy {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .support-cta-copy a {
-        width: 100%;
-        max-width: 340px;
-      }
-
-      .support-cta-panel {
-        width: 100%;
-        max-width: 620px;
-        margin: 0 auto;
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .support-cta {
-        gap: 22px;
-        padding: 28px 20px;
-        border-radius: 24px;
-      }
-
-      .support-cta-copy span {
-        font-size: 11px;
-      }
-
-      .support-cta-copy strong {
-        font-size: 23px;
-      }
-
-      .support-cta-copy p {
-        font-size: 14px;
-      }
-
-      .support-cta-copy a {
-        max-width: none;
-        margin-top: 20px;
-      }
-
-      .support-cta-panel {
-        border-radius: 20px;
-        padding: 14px;
-      }
-
-      .support-panel-item {
-        grid-template-columns: 34px 1fr;
-        gap: 10px;
-        padding: 12px;
-      }
-
-      .support-panel-item > span {
-        width: 34px;
-        height: 34px;
-        font-size: 11px;
-      }
-    }
-
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/icon/icon+tech+-+32x32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/icon/icon+tech+-+180x180.png" />
@@ -1926,7 +1711,8 @@
   <!-- NAV -->
   <header class="nav-bar">
     <div class="container nav-inner">
-      <a class="brand-logo" href="HOME PAGE - LP TECH.html" aria-label="Smart GR Tech">
+      <!-- ✅ CORRIGIDO: HOME PAGE - LP TECH.html → index.html -->
+      <a class="brand-logo" href="index.html" aria-label="Smart GR Tech">
         <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech" />
       </a>
 
@@ -1938,7 +1724,6 @@
       </nav>
 
       <div class="nav-actions">
-       <!--  <a class="btn btn-outline" href="#area-exclusiva">Área exclusiva</a>-->
         <a class="btn btn-primary" href="https://wa.me/5511999999999?text=Olá,%20quero%20falar%20com%20um%20especialista%20sobre%20a%20Smart%20GR%20Tech" target="_blank" rel="noopener">Falar com especialista</a>
         <button class="mobile-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
       </div>
@@ -1951,7 +1736,7 @@
     <a href="#suporte">Suporte</a>
     <a href="#faq">FAQ</a>
 
-    <a
+    
       class="mobile-nav-btn"
       href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech"
       target="_blank"
@@ -1965,32 +1750,34 @@
   <main id="top">
     <section class="hero-banner" aria-label="Banner principal Smart GR Tech">
       <div class="hero-carousel" id="heroBannerSlider">
+
+        <!-- ✅ CORRIGIDO: PDP - MAXIMUS PLASMA.html → maximus-plasma.html -->
         <div class="hero-slide">
-          <a class="hero-banner-link" href="PDP - MAXIMUS PLASMA.html" aria-label="Conhecer equipamentos Smart GR Tech">
+          <a class="hero-banner-link" href="maximus-plasma.html" aria-label="Conhecer equipamentos Smart GR Tech">
             <picture>
               <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech+-+mobile.png" />
               <img class="hero-banner-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech.png" alt="Banner Smart GR Tech 1" />
-            </picture>      
+            </picture>
           </a>
         </div>
 
+        <!-- ✅ CORRIGIDO: PDP - MAXIMUS LIFT.html → maximus-lift.html -->
         <div class="hero-slide">
-          <a class="hero-banner-link" href="PDP - MAXIMUS LIFT.html" aria-label="Conhecer equipamentos Smart GR Tech">
+          <a class="hero-banner-link" href="maximus-lift.html" aria-label="Conhecer equipamentos Smart GR Tech">
             <picture>
               <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech+-+mobile+3.png" />
               <img class="hero-banner-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/header/teste+banner+tech+-+desk+3.png" alt="Banner Smart GR Tech 3" />
             </picture>
-            
           </a>
         </div>
 
+        <!-- ✅ CORRIGIDO: PDP - DEEP LASER.html → deep-laser.html -->
         <div class="hero-slide">
-          <a class="hero-banner-link" href="PDP - DEEP LASER.html" aria-label="Conhecer equipamentos Smart GR Tech">
+          <a class="hero-banner-link" href="deep-laser.html" aria-label="Conhecer equipamentos Smart GR Tech">
             <picture>
               <source media="(max-width: 700px)" srcset="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Mobile.png" />
               <img class="hero-banner-img" src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/PDP/Smart+Deep+Laser/Banner+PDP+-+Deep+Laser+Desktop.png" alt="Banner Smart GR Tech 3" />
             </picture>
-            
           </a>
         </div>
 
@@ -2019,73 +1806,73 @@
       </div>
     </div>
 
-   <!-- TRATAMENTOS / CARROSSEL -->
-<section class="treatments-section" id="tratamentos">
-  <div class="container">
-    <div class="treatments-header">
-      <span>Tecnologia para protocolos mais completos</span>
-      <h2>Soluções Smart GR Tech para diferentes áreas</h2>
-    </div>
+    <!-- TRATAMENTOS / CARROSSEL -->
+    <section class="treatments-section" id="tratamentos">
+      <div class="container">
+        <div class="treatments-header">
+          <span>Tecnologia para protocolos mais completos</span>
+          <h2>Soluções Smart GR Tech para diferentes áreas</h2>
+        </div>
 
-    <div class="treatments-slider-wrap">
-      <button class="treatments-arrow prev" type="button" aria-label="Tratamento anterior">‹</button>
+        <div class="treatments-slider-wrap">
+          <button class="treatments-arrow prev" type="button" aria-label="Tratamento anterior">‹</button>
 
-      <div class="treatments-slider" id="treatmentsSlider">
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/lifting.jpg" alt="Lifting facial">
-          <h3>Lifting facial</h3>
-        </article>
+          <div class="treatments-slider" id="treatmentsSlider">
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/lifting.jpg" alt="Lifting facial">
+              <h3>Lifting facial</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/flacidez.jpg" alt="Flacidez">
-          <h3>Flacidez</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/flacidez.jpg" alt="Flacidez">
+              <h3>Flacidez</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/rejuveescimento.jpg" alt="Rejuvenescimento">
-          <h3>Rejuvenescimento</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/rejuveescimento.jpg" alt="Rejuvenescimento">
+              <h3>Rejuvenescimento</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/cicatrizes.jpg" alt="Estrias e cicatrizes">
-          <h3>Estrias e cicatrizes</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/cicatrizes.jpg" alt="Estrias e cicatrizes">
+              <h3>Estrias e cicatrizes</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/melasma.jpg" alt="Melasma e manchas">
-          <h3>Melasma e manchas</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/melasma.jpg" alt="Melasma e manchas">
+              <h3>Melasma e manchas</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/acne.jpg" alt="Acne ativa">
-          <h3>Acne ativa</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/acne.jpg" alt="Acne ativa">
+              <h3>Acne ativa</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/remodela%C3%A7%C3%A3o.jpg" alt="Remodelação corporal">
-          <h3>Remodelação corporal</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/remodelação.jpg" alt="Remodelação corporal">
+              <h3>Remodelação corporal</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/varizes.jpg" alt="Tratamento vascular">
-          <h3>Tratamento vascular</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/varizes.jpg" alt="Tratamento vascular">
+              <h3>Tratamento vascular</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/capilar.jpg" alt="Capilar">
-          <h3>Capilar</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/capilar.jpg" alt="Capilar">
+              <h3>Capilar</h3>
+            </article>
 
-        <article class="treatment-card">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/intimo.jpg" alt="Íntimo">
-          <h3>Íntimo</h3>
-        </article>
+            <article class="treatment-card">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/Slider+tratamentos/intimo.jpg" alt="Íntimo">
+              <h3>Íntimo</h3>
+            </article>
+          </div>
+
+          <button class="treatments-arrow next" type="button" aria-label="Próximo tratamento">›</button>
+        </div>
       </div>
-
-      <button class="treatments-arrow next" type="button" aria-label="Próximo tratamento">›</button>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- CARDS PRODUTOS -->
     <section class="products-section" id="equipamentos" aria-label="Equipamentos Smart GR Tech">
@@ -2096,6 +1883,8 @@
         </div>
 
         <div class="products-grid">
+
+          <!-- ✅ CORRIGIDO: PDP - MAXIMUS LIFT.html → maximus-lift.html -->
           <article class="product-card">
             <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+maximus+card+LP+tech.png" alt="Smart Maximus Lift"></div>
             <div class="product-topline">
@@ -2109,11 +1898,12 @@
               <span class="chip">Textura</span>
             </div>
             <div class="card-actions">
-              <a class="card-btn primary" href="PDP - MAXIMUS LIFT.html">Ver página</a>
+              <a class="card-btn primary" href="maximus-lift.html">Ver página</a>
               <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Proposta</a>
             </div>
           </article>
 
+          <!-- ✅ CORRIGIDO: PDP - MULTI HIFU.html → multi-hifu.html -->
           <article class="product-card">
             <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+HIFU+card+LP+tech.png" alt="Smart Multi HIFU"></div>
             <div class="product-topline">
@@ -2127,13 +1917,14 @@
               <span class="chip">Face e corpo</span>
             </div>
             <div class="card-actions">
-              <a class="card-btn primary" href="PDP - MULTI HIFU.html">Ver página</a>
+              <a class="card-btn primary" href="multi-hifu.html">Ver página</a>
               <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
             </div>
           </article>
 
+          <!-- ✅ CORRIGIDO: PDP - MESOPRO.html → mesopro.html -->
           <article class="product-card">
-            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+meso+pro+card+LP+tech.png" alt="Smart MesoPro">  </div>
+            <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+meso+pro+card+LP+tech.png" alt="Smart MesoPro"></div>
             <div class="product-topline">
               <span class="tag">Eletroporação</span>
             </div>
@@ -2145,11 +1936,12 @@
               <span class="chip">Capilar</span>
             </div>
             <div class="card-actions">
-              <a class="card-btn primary" href="PDP - MESOPRO.html">Ver página</a>
+              <a class="card-btn primary" href="mesopro.html">Ver página</a>
               <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
             </div>
           </article>
 
+          <!-- ✅ CORRIGIDO: PDP - MAXIMUS PLASMA.html → maximus-plasma.html -->
           <article class="product-card">
             <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+plasma+card+LP+tech.png" alt="Smart Maximus Plasma"></div>
             <div class="product-topline">
@@ -2159,15 +1951,15 @@
             <p>Plataforma com plasma frio e plasma quente para ampliar possibilidades em protocolos estéticos e dermatológicos.</p>
             <div class="chips">
               <span class="chip">Frio + quente</span>
-              
               <span class="chip">Versatilidade</span>
             </div>
             <div class="card-actions">
-              <a class="card-btn primary" href="PDP - MAXIMUS PLASMA.html">Ver página</a>
+              <a class="card-btn primary" href="maximus-plasma.html">Ver página</a>
               <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
             </div>
           </article>
 
+          <!-- ✅ CORRIGIDO: PDP - DEEP LASER.html → deep-laser.html -->
           <article class="product-card">
             <div class="product-image"><img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/cards/teste+deep+laser+card+LP+tech.png" alt="Smart Deep Laser"></div>
             <div class="product-topline">
@@ -2181,382 +1973,383 @@
               <span class="chip">Alta precisão</span>
             </div>
             <div class="card-actions">
-              <a class="card-btn primary" href="PDP - DEEP LASER.html">Ver página</a>
+              <a class="card-btn primary" href="deep-laser.html">Ver página</a>
               <a class="card-btn secondary" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">Conhecer</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
-<!-- SUPORTE -->
-<section class="support-section" id="suporte">
-  <div class="container">
-    <div class="support-header">
-      <span>Suporte</span>
-      <h2>Você não compra só um equipamento. Você acessa uma estrutura Smart GR Tech</h2>
-      <p>
-        Conte com orientação comercial, suporte técnico e direcionamento para ajudar sua clínica a escolher, operar e evoluir com mais segurança.
-      </p>
-    </div>
+    <!-- SUPORTE -->
+    <section class="support-section" id="suporte">
+      <div class="container">
+        <div class="support-header">
+          <span>Suporte</span>
+          <h2>Você não compra só um equipamento. Você acessa uma estrutura Smart GR Tech</h2>
+          <p>
+            Conte com orientação comercial, suporte técnico e direcionamento para ajudar sua clínica a escolher, operar e evoluir com mais segurança.
+          </p>
+        </div>
 
-    <div class="support-grid">
-      <article class="support-card">
-        <div class="support-icon">01</div>
-        <h3>Atendimento consultivo</h3>
-        <p>
-          Um especialista entende o perfil da sua clínica e indica a tecnologia mais alinhada aos seus objetivos comerciais e técnicos.
-        </p>
-      </article>
+        <div class="support-grid">
+          <article class="support-card">
+            <div class="support-icon">01</div>
+            <h3>Atendimento consultivo</h3>
+            <p>
+              Um especialista entende o perfil da sua clínica e indica a tecnologia mais alinhada aos seus objetivos comerciais e técnicos.
+            </p>
+          </article>
 
-      <article class="support-card">
-        <div class="support-icon">02</div>
-        <h3>Treinamento e capacitação</h3>
-        <p>
-          Direcionamento para uso do equipamento, possibilidades de protocolos e melhor aproveitamento da tecnologia na rotina clínica.
-        </p>
-      </article>
+          <article class="support-card">
+            <div class="support-icon">02</div>
+            <h3>Treinamento e capacitação</h3>
+            <p>
+              Direcionamento para uso do equipamento, possibilidades de protocolos e melhor aproveitamento da tecnologia na rotina clínica.
+            </p>
+          </article>
 
-      <article class="support-card">
-        <div class="support-icon">03</div>
-        <h3>Suporte técnico</h3>
-        <p>
-          Canal de apoio para dúvidas, manutenção, orientações operacionais e acompanhamento após a aquisição do equipamento.
-        </p>
-      </article>
-    </div>
+          <article class="support-card">
+            <div class="support-icon">03</div>
+            <h3>Suporte técnico</h3>
+            <p>
+              Canal de apoio para dúvidas, manutenção, orientações operacionais e acompanhamento após a aquisição do equipamento.
+            </p>
+          </article>
+        </div>
 
-    <div class="support-cta">
-      <div class="support-cta-copy">
-        <span>Atendimento consultivo</span>
-        <strong>Quer entender qual equipamento combina com sua clínica?</strong>
-        <p>Fale com o time Smart GR Tech e receba uma orientação personalizada para escolher a tecnologia mais estratégica.</p>
+        <div class="support-cta">
+          <div class="support-cta-copy">
+            <span>Atendimento consultivo</span>
+            <strong>Quer entender qual equipamento combina com sua clínica?</strong>
+            <p>Fale com o time Smart GR Tech e receba uma orientação personalizada para escolher a tecnologia mais estratégica.</p>
 
-        <a 
-          href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech"
-          target="_blank"
-          rel="noopener"
-        >
-          Falar com especialista
-        </a>
-      </div>
-
-      <div class="support-cta-panel" aria-label="Etapas do atendimento consultivo">
-        <div class="support-panel-tag">Diagnóstico rápido</div>
-
-        <div class="support-panel-list">
-          <div class="support-panel-item">
-            <span>01</span>
-            <div>
-              <b>Perfil da clínica</b>
-              <small>Objetivo, público e protocolos atuais.</small>
-            </div>
+            
+              href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech"
+              target="_blank"
+              rel="noopener"
+            >
+              Falar com especialista
+            </a>
           </div>
 
-          <div class="support-panel-item">
-            <span>02</span>
-            <div>
-              <b>Tecnologia ideal</b>
-              <small>Indicação alinhada à sua estratégia.</small>
-            </div>
-          </div>
+          <div class="support-cta-panel" aria-label="Etapas do atendimento consultivo">
+            <div class="support-panel-tag">Diagnóstico rápido</div>
 
-          <div class="support-panel-item">
-            <span>03</span>
-            <div>
-              <b>Próximo passo</b>
-              <small>Proposta, suporte e direcionamento.</small>
+            <div class="support-panel-list">
+              <div class="support-panel-item">
+                <span>01</span>
+                <div>
+                  <b>Perfil da clínica</b>
+                  <small>Objetivo, público e protocolos atuais.</small>
+                </div>
+              </div>
+
+              <div class="support-panel-item">
+                <span>02</span>
+                <div>
+                  <b>Tecnologia ideal</b>
+                  <small>Indicação alinhada à sua estratégia.</small>
+                </div>
+              </div>
+
+              <div class="support-panel-item">
+                <span>03</span>
+                <div>
+                  <b>Próximo passo</b>
+                  <small>Proposta, suporte e direcionamento.</small>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- FAQ -->
     <section class="faq-section" id="faq">
-  <div class="container">
-    <div class="faq-header">
-      <span class="faq-kicker">FAQ</span>
-      <h2>Perguntas frequentes</h2>
-      <p>
-        Tire as principais dúvidas sobre os equipamentos Smart GR Tech, suporte, compra e área exclusiva.
-      </p>
-    </div>
+      <div class="container">
+        <div class="faq-header">
+          <span class="faq-kicker">FAQ</span>
+          <h2>Perguntas frequentes</h2>
+          <p>
+            Tire as principais dúvidas sobre os equipamentos Smart GR Tech, suporte, compra e área exclusiva.
+          </p>
+        </div>
 
-    <div class="faq-list">
-      <details class="faq-item" open>
-        <summary>
-          <span>O que é a Smart GR Tech?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>
-          A Smart GR Tech reúne equipamentos desenvolvidos para clínicas e profissionais que buscam tecnologia, performance e diferenciação em protocolos estéticos avançados.
-        </p>
-      </details>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>
+              <span>O que é a Smart GR Tech?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <p>
+              A Smart GR Tech reúne equipamentos desenvolvidos para clínicas e profissionais que buscam tecnologia, performance e diferenciação em protocolos estéticos avançados.
+            </p>
+          </details>
 
-      <details class="faq-item">
-        <summary>
-          <span>Quais tecnologias fazem parte da linha Smart GR Tech?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>
-          A linha conta com equipamentos de laser, ultrassom, radiofrequência, plasma, eletroporação e outras tecnologias voltadas para protocolos faciais, corporais, capilares e íntimos.
-        </p>
-      </details>
+          <details class="faq-item">
+            <summary>
+              <span>Quais tecnologias fazem parte da linha Smart GR Tech?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <p>
+              A linha conta com equipamentos de laser, ultrassom, radiofrequência, plasma, eletroporação e outras tecnologias voltadas para protocolos faciais, corporais, capilares e íntimos.
+            </p>
+          </details>
 
-      <details class="faq-item">
-        <summary>
-          <span>Como saber qual equipamento é ideal para minha clínica?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>
-          A escolha depende do perfil da sua clínica, dos procedimentos que você deseja oferecer, do público atendido e dos seus objetivos comerciais. Nossa equipe pode auxiliar nessa análise.
-        </p>
-      </details>
+          <details class="faq-item">
+            <summary>
+              <span>Como saber qual equipamento é ideal para minha clínica?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <p>
+              A escolha depende do perfil da sua clínica, dos procedimentos que você deseja oferecer, do público atendido e dos seus objetivos comerciais. Nossa equipe pode auxiliar nessa análise.
+            </p>
+          </details>
 
-      <details class="faq-item">
-        <summary>
-          <span>Os equipamentos acompanham treinamento?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>
-          Sim. A Smart GR valoriza a capacitação profissional e oferece orientação para que o equipamento seja utilizado com mais segurança, estratégia e performance nos atendimentos.
-        </p>
-      </details>
+          <details class="faq-item">
+            <summary>
+              <span>Os equipamentos acompanham treinamento?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <p>
+              Sim. A Smart GR valoriza a capacitação profissional e oferece orientação para que o equipamento seja utilizado com mais segurança, estratégia e performance nos atendimentos.
+            </p>
+          </details>
 
-      <details class="faq-item">
-        <summary>
-          <span>Existe suporte após a compra do equipamento?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>
-          Sim. O profissional conta com suporte para dúvidas, orientações de uso e acompanhamento após a aquisição do equipamento.
-        </p>
-      </details>
+          <details class="faq-item">
+            <summary>
+              <span>Existe suporte após a compra do equipamento?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <p>
+              Sim. O profissional conta com suporte para dúvidas, orientações de uso e acompanhamento após a aquisição do equipamento.
+            </p>
+          </details>
 
-      <details class="faq-item">
-        <summary>
-          <span>Os equipamentos podem ser usados em quais áreas?</span>
-          <span class="faq-icon">+</span>
-        </summary>
-        <p>
-          As tecnologias Smart GR Tech podem ser aplicadas em diferentes protocolos faciais, corporais, capilares e íntimos, conforme a indicação de cada equipamento e a habilitação do profissional.
-        </p>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER SMART GR TECH -->
-<footer class="site-footer">
-  <section class="footer-newsletter">
-    <div class="container footer-newsletter-inner">
-      <div>
-        <span>Smart GR Tech</span>
-        <h2>Receba novidades Smart GR Tech.</h2>
-        <p>
-          Tecnologias, eventos e lançamentos direto no seu e-mail.
-        </p>
-      </div>
-
-      <form class="footer-form" action="#" method="post">
-        <input type="email" name="email" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail">
-        <button type="submit">Cadastrar</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="footer-main">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a class="footer-logo" href="#top" aria-label="Smart GR Tech">
-          <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech">
-        </a>
-
-        <p>
-          A divisão de equipamentos eletromédicos da Smart GR. Tecnologia, suporte e curadoria para elevar o posicionamento de clínicas de estética avançada.
-        </p>
-
-        <div class="footer-socials" aria-label="Redes sociais">
-          <a href="https://www.instagram.com/smartgr.tech/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 12 16.8a4.8 4.8 0 0 1 0-9.6Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2ZM17.1 6.7a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
-            </svg>
-          </a>
-
-          <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2a9.8 9.8 0 0 0-8.5 14.7L2.4 22l5.4-1.1A9.9 9.9 0 1 0 12 2Zm0 18a8 8 0 0 1-4-1.1l-.4-.2-3.2.7.7-3.1-.2-.5A8 8 0 1 1 12 20Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.9 10.9 0 0 0 4.2 3.7 8.5 8.5 0 0 0 1.4.5 3.4 3.4 0 0 0 1.5.1 2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.3-.2-.5-.3Z"/>
-            </svg>
-          </a>
-
-          <a href="https://www.youtube.com/@smartgrbr" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10 15.3V8.7l5.7 3.3Z"/>
-            </svg>
-          </a>
+          <details class="faq-item">
+            <summary>
+              <span>Os equipamentos podem ser usados em quais áreas?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <p>
+              As tecnologias Smart GR Tech podem ser aplicadas em diferentes protocolos faciais, corporais, capilares e íntimos, conforme a indicação de cada equipamento e a habilitação do profissional.
+            </p>
+          </details>
         </div>
       </div>
+    </section>
 
-      <div class="footer-col">
-        <h3>Smart GR Tech</h3>
-        <a href="#equipamentos">Equipamentos</a>
-        <a href="#tratamentos">Tratamentos</a>
-        <a href="#suporte">Suporte</a>
-        <a href="#faq">FAQ</a>
-        <a href="#area-exclusiva">Área exclusiva</a>
-      </div>
+    <!-- FOOTER SMART GR TECH -->
+    <footer class="site-footer">
+      <section class="footer-newsletter">
+        <div class="container footer-newsletter-inner">
+          <div>
+            <span>Smart GR Tech</span>
+            <h2>Receba novidades Smart GR Tech.</h2>
+            <p>
+              Tecnologias, eventos e lançamentos direto no seu e-mail.
+            </p>
+          </div>
 
-      <div class="footer-col">
-        <h3>Grupo Smart GR</h3>
-        <a href="https://smartgr.com.br/" target="_blank" rel="noopener">Site Smart GR</a>
-        <a href="https://smartgr.com.br/blogs/news" target="_blank" rel="noopener">Blog</a>
-        <a href="https://smartgr.com.br/pages/agenda-de-eventos" target="_blank" rel="noopener">Agenda de eventos</a>
-        <a href="https://smartgr.com.br/pages/seja-um-revendedor" target="_blank" rel="noopener">Seja um revendedor</a>
-      </div>
+          <form class="footer-form" action="#" method="post">
+            <input type="email" name="email" placeholder="Seu melhor e-mail" aria-label="Seu melhor e-mail">
+            <button type="submit">Cadastrar</button>
+          </form>
+        </div>
+      </section>
 
-      <div class="footer-col footer-contact">
-        <h3>Atendimento</h3>
-        <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
-          WhatsApp comercial
-        </a>
-        <a href="mailto:atendimento@smartgr.com.br">atendimento@smartgr.com.br</a>
-        <p>Segunda a sexta, das 9h às 18h.</p>
-        <a class="footer-contact-btn" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
-          Falar com especialista
-        </a>
-      </div>
-    </div>
-  </section>
+      <section class="footer-main">
+        <div class="container footer-grid">
+          <div class="footer-brand">
+            <!-- ✅ CORRIGIDO: HOME PAGE - LP TECH.html → index.html -->
+            <a class="footer-logo" href="index.html" aria-label="Smart GR Tech">
+              <img src="https://smartgr.s3.sa-east-1.amazonaws.com/smartgr+tech/LP+Smartgr+Tech/logo/logo+smart+gr+tech+-+svg.svg" alt="Smart GR Tech">
+            </a>
 
-  <section class="footer-bottom">
-    <div class="container footer-bottom-inner">
-      <p>© Smart GR Tech. Todos os direitos reservados.</p>
-      <p>Uma divisão de tecnologia do Grupo Smart GR.</p>
-    </div>
-  </section>
-</footer>
+            <p>
+              A divisão de equipamentos eletromédicos da Smart GR. Tecnologia, suporte e curadoria para elevar o posicionamento de clínicas de estética avançada.
+            </p>
+
+            <div class="footer-socials" aria-label="Redes sociais">
+              <a href="https://www.instagram.com/smartgr.tech/" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 12 16.8a4.8 4.8 0 0 1 0-9.6Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2ZM17.1 6.7a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
+                </svg>
+              </a>
+
+              <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2a9.8 9.8 0 0 0-8.5 14.7L2.4 22l5.4-1.1A9.9 9.9 0 1 0 12 2Zm0 18a8 8 0 0 1-4-1.1l-.4-.2-3.2.7.7-3.1-.2-.5A8 8 0 1 1 12 20Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.9 1-.3.2-.6.1a6.5 6.5 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.7c-.1-.3 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.9 10.9 0 0 0 4.2 3.7 8.5 8.5 0 0 0 1.4.5 3.4 3.4 0 0 0 1.5.1 2.4 2.4 0 0 0 1.6-1.1 2 2 0 0 0 .1-1.1c-.1-.1-.3-.2-.5-.3Z"/>
+                </svg>
+              </a>
+
+              <a href="https://www.youtube.com/@smartgrbr" target="_blank" rel="noopener" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.4-4.8ZM10 15.3V8.7l5.7 3.3Z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Smart GR Tech</h3>
+            <a href="#equipamentos">Equipamentos</a>
+            <a href="#tratamentos">Tratamentos</a>
+            <a href="#suporte">Suporte</a>
+            <a href="#faq">FAQ</a>
+            <a href="#area-exclusiva">Área exclusiva</a>
+          </div>
+
+          <div class="footer-col">
+            <h3>Grupo Smart GR</h3>
+            <a href="https://smartgr.com.br/" target="_blank" rel="noopener">Site Smart GR</a>
+            <a href="https://smartgr.com.br/blogs/news" target="_blank" rel="noopener">Blog</a>
+            <a href="https://smartgr.com.br/pages/agenda-de-eventos" target="_blank" rel="noopener">Agenda de eventos</a>
+            <a href="https://smartgr.com.br/pages/seja-um-revendedor" target="_blank" rel="noopener">Seja um revendedor</a>
+          </div>
+
+          <div class="footer-col footer-contact">
+            <h3>Atendimento</h3>
+            <a href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
+              WhatsApp comercial
+            </a>
+            <a href="mailto:atendimento@smartgr.com.br">atendimento@smartgr.com.br</a>
+            <p>Segunda a sexta, das 9h às 18h.</p>
+            <a class="footer-contact-btn" href="https://wa.me/551141180161?text=Olá,%20quero%20falar%20com%20um%20especialista%20Smart%20GR%20Tech" target="_blank" rel="noopener">
+              Falar com especialista
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© Smart GR Tech. Todos os direitos reservados.</p>
+          <p>Uma divisão de tecnologia do Grupo Smart GR.</p>
+        </div>
+      </section>
+    </footer>
 
   </main>
 
   <script>
-//slider carrossel
-  const treatmentsSlider = document.getElementById('treatmentsSlider');
-  const treatmentsPrev = document.querySelector('.treatments-arrow.prev');
-  const treatmentsNext = document.querySelector('.treatments-arrow.next');
+    //slider carrossel
+    const treatmentsSlider = document.getElementById('treatmentsSlider');
+    const treatmentsPrev = document.querySelector('.treatments-arrow.prev');
+    const treatmentsNext = document.querySelector('.treatments-arrow.next');
 
-  if (treatmentsSlider && treatmentsPrev && treatmentsNext) {
-    function scrollTreatments(direction) {
-      const card = treatmentsSlider.querySelector('.treatment-card');
+    if (treatmentsSlider && treatmentsPrev && treatmentsNext) {
+      function scrollTreatments(direction) {
+        const card = treatmentsSlider.querySelector('.treatment-card');
 
-      if (!card) return;
+        if (!card) return;
 
-      const sliderStyles = window.getComputedStyle(treatmentsSlider);
-      const gap = parseFloat(sliderStyles.columnGap || sliderStyles.gap) || 0;
-      const scrollAmount = card.offsetWidth + gap;
+        const sliderStyles = window.getComputedStyle(treatmentsSlider);
+        const gap = parseFloat(sliderStyles.columnGap || sliderStyles.gap) || 0;
+        const scrollAmount = card.offsetWidth + gap;
 
-      treatmentsSlider.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      });
+        treatmentsSlider.scrollBy({
+          left: direction * scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+
+      treatmentsPrev.addEventListener('click', () => scrollTreatments(-1));
+      treatmentsNext.addEventListener('click', () => scrollTreatments(1));
     }
 
-    treatmentsPrev.addEventListener('click', () => scrollTreatments(-1));
-    treatmentsNext.addEventListener('click', () => scrollTreatments(1));
-  }
+    //banner hero
+    const heroBannerSlider = document.getElementById('heroBannerSlider');
+    const heroPrev = document.querySelector('.hero-control.prev');
+    const heroNext = document.querySelector('.hero-control.next');
+    const heroDots = document.querySelectorAll('.hero-dot');
 
-//banner hero
-  const heroBannerSlider = document.getElementById('heroBannerSlider');
-  const heroPrev = document.querySelector('.hero-control.prev');
-  const heroNext = document.querySelector('.hero-control.next');
-  const heroDots = document.querySelectorAll('.hero-dot');
+    if (heroBannerSlider) {
+      const heroSlides = heroBannerSlider.querySelectorAll('.hero-slide');
+      let currentHeroSlide = 0;
+      let heroScrollRaf = null;
 
-  if (heroBannerSlider) {
-    const heroSlides = heroBannerSlider.querySelectorAll('.hero-slide');
-    let currentHeroSlide = 0;
-    let heroScrollRaf = null;
+      function updateHeroControls() {
+        heroDots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentHeroSlide);
+        });
+      }
 
-    function updateHeroControls() {
+      function goToHeroSlide(index, behavior = 'smooth') {
+        if (!heroSlides.length) return;
+
+        currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+
+        heroBannerSlider.scrollTo({
+          left: heroBannerSlider.clientWidth * currentHeroSlide,
+          behavior: behavior
+        });
+
+        updateHeroControls();
+      }
+
+      if (heroPrev) {
+        heroPrev.addEventListener('click', () => goToHeroSlide(currentHeroSlide - 1));
+      }
+
+      if (heroNext) {
+        heroNext.addEventListener('click', () => goToHeroSlide(currentHeroSlide + 1));
+      }
+
       heroDots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentHeroSlide);
+        dot.addEventListener('click', () => goToHeroSlide(index));
       });
-    }
 
-    function goToHeroSlide(index, behavior = 'smooth') {
-      if (!heroSlides.length) return;
+      heroBannerSlider.addEventListener('scroll', () => {
+        if (heroScrollRaf) {
+          window.cancelAnimationFrame(heroScrollRaf);
+        }
 
-      currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+        heroScrollRaf = window.requestAnimationFrame(() => {
+          currentHeroSlide = Math.round(heroBannerSlider.scrollLeft / heroBannerSlider.clientWidth);
+          updateHeroControls();
+        });
+      });
 
-      heroBannerSlider.scrollTo({
-        left: heroBannerSlider.clientWidth * currentHeroSlide,
-        behavior: behavior
+      setInterval(() => {
+        goToHeroSlide(currentHeroSlide + 1);
+      }, 5000);
+
+      window.addEventListener('resize', () => {
+        goToHeroSlide(currentHeroSlide, 'auto');
       });
 
       updateHeroControls();
     }
 
-    if (heroPrev) {
-      heroPrev.addEventListener('click', () => goToHeroSlide(currentHeroSlide - 1));
-    }
+    //menu mobile
+    const mobileMenuButton = document.querySelector('.mobile-menu');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
-    if (heroNext) {
-      heroNext.addEventListener('click', () => goToHeroSlide(currentHeroSlide + 1));
-    }
+    if (mobileMenuButton && mobileNav) {
+      mobileMenuButton.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('active');
 
-    heroDots.forEach((dot, index) => {
-      dot.addEventListener('click', () => goToHeroSlide(index));
-    });
-
-    heroBannerSlider.addEventListener('scroll', () => {
-      if (heroScrollRaf) {
-        window.cancelAnimationFrame(heroScrollRaf);
-      }
-
-      heroScrollRaf = window.requestAnimationFrame(() => {
-        currentHeroSlide = Math.round(heroBannerSlider.scrollLeft / heroBannerSlider.clientWidth);
-        updateHeroControls();
+        mobileMenuButton.classList.toggle('active', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        mobileMenuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        mobileMenuButton.innerHTML = isOpen ? '×' : '☰';
       });
-    });
 
-    setInterval(() => {
-      goToHeroSlide(currentHeroSlide + 1);
-    }, 5000);
-
-    window.addEventListener('resize', () => {
-      goToHeroSlide(currentHeroSlide, 'auto');
-    });
-
-    updateHeroControls();
-  }
-
-//menu mobile
-  const mobileMenuButton = document.querySelector('.mobile-menu');
-  const mobileNav = document.getElementById('mobileNav');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-
-  if (mobileMenuButton && mobileNav) {
-    mobileMenuButton.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('active');
-
-      mobileMenuButton.classList.toggle('active', isOpen);
-      document.body.classList.toggle('menu-open', isOpen);
-      mobileMenuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      mobileMenuButton.innerHTML = isOpen ? '×' : '☰';
-    });
-
-    mobileNavLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        mobileMenuButton.classList.remove('active');
-        document.body.classList.remove('menu-open');
-        mobileMenuButton.setAttribute('aria-expanded', 'false');
-        mobileMenuButton.innerHTML = '☰';
+      mobileNavLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('active');
+          mobileMenuButton.classList.remove('active');
+          document.body.classList.remove('menu-open');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          mobileMenuButton.innerHTML = '☰';
+        });
       });
-    });
-  } 
-</script>
+    }
+  </script>
 </body>
 </html>
